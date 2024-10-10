@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Hospital System{% endblock %}</title>
+ </head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Panel de Control</h2>
+            <ul>
+{#                <li><a href="{% url 'paciente_dashboard' %}">Inicio</a></li>#}
+{#                <li><a href="{% url 'logout' %}">Cerrar sesión</a></li>#}
+                <li><a href="{{ url }}">Recetas Médicas</a></li>
+{#                <li><a href="{% url 'historias:historia_list' %}">Historias Clínicas</a></li>#}
+{#                <li><a href="{% url 'citas:agendar_cita' %}">Agendar Cita</a></li>#}
+{#                <li><a href="{% url 'pacientes:ver_informacion' %}">Información Médica</a></li>#}
+                <!-- Agrega más enlaces según sea necesario -->
+            </ul> 
+        </nav>
+        <div class="main-content">
+            {% block content %}
+            <!-- Aquí se mostrará el contenido específico de cada página -->
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>
