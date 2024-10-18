@@ -1,0 +1,8 @@
+<h2>Inicio de sesión para Pacientes</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Iniciar sesión</button>
+     <p>No tienes una Cuenta? <a href="{% url 'pacientes:register' %}">Registrate aquí</a></p>
+    <p>Eres Doctor? <a href="{% url 'doctores:doctor_login' %}">Inicia Sesion Aqui!</a></p>
+</form>

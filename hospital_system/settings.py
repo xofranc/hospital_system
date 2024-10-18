@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'logins',
     'historias',
     'farmacias',
-    'recetarios'
+    'recetarios',
+    'common',
+    'doctores',
+    'pacientes'
 ]
 
 MIDDLEWARE = [
@@ -133,4 +136,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # hospital_system/settings.py
 
-LOGIN_URL = 'login'  # Asegúrate de que esta URL coincida con tu vista de inicio de sesión
+LOGIN_URL = 'logins:login'  # Asegúrate de que esta URL coincida con tu vista de inicio de sesión

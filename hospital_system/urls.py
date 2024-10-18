@@ -18,11 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from logins.views import home
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('logins/', include('logins.urls')),
+    path('doctores/', include('doctores.urls'), name='doctores'),
     path('historias/', include('historias.urls')),
     path('recetarios/', include('recetarios.urls'), name='recetarios'),
     path('farmacias/', include('farmacias.urls')),
+    path('pacientes/', include('pacientes.urls'), name='pacientes'),
 ]
