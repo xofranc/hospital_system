@@ -3,12 +3,12 @@ const linkItems = document.querySelectorAll(".link-item");
 const darkMode = document.querySelector(".dark-mode");
 const logo = document.querySelector(".logo svg");
 
-//Container Hover
+//navcontainer Hover
 navcontainer.addEventListener("mouseenter", () => {
   navcontainer.classList.add("active");
 });
 
-//Container Hover Leave
+//navcontainer Hover Leave
 navcontainer.addEventListener("mouseleave", () => {
   navcontainer.classList.remove("active");
 });
@@ -28,12 +28,12 @@ for (let i = 0; i < linkItems.length; i++) {
 // Dark Mode Functionality
 darkMode.addEventListener("click", function () {
   if (document.body.classList.contains("dark-mode")) {
-    darkMode.querySelector("span").textContent = "dark mode";
+    darkMode.querySelector("span").textContent = "Modo Oscuro";
     darkMode.querySelector("ion-icon").setAttribute("name", "moon-outline");
 
     logo.style.fill = "#363b46";
   } else {
-    darkMode.querySelector("span").textContent = "light mode";
+    darkMode.querySelector("span").textContent = "Modo Claro";
     darkMode.querySelector("ion-icon").setAttribute("name", "sunny-outline");
     logo.style.fill = "#fff";
   }

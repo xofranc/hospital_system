@@ -8,9 +8,8 @@
     <title>{% block title %}Hospital System{% endblock %}</title>
  </head>
 <body>
-    <div class="container1">
-        <nav class="sidebar1">
-            
+          <div class="page"> 
+
             <div class="navcontainer">
                 <div class="logo">
                   <svg
@@ -39,44 +38,49 @@
                   <li class="link-item">
                     <a href="#" class="link">
                       <ion-icon name="cube-outline"></ion-icon>
-                      <span style="--i: 2">CrearHistoria</span>
+                      <span style="--i: 2">Info Medica</span>
                     </a>
                   </li>
                   <li class="link-item">
                     <a href="#" class="link"
                       ><ion-icon name="search-outline"></ion-icon>
-                      <span style="--i: 3">EnviarReceta</span>
+                      <span style="--i: 3">Panel Paciente</span>
                     </a>
                   </li>
                   <li class="link-item">
                     <a href="#" class="link">
                       <ion-icon class="noti-icon" name="notifications-outline"></ion-icon>
-                      <span style="--i: 4">notifications</span>
+                      <span style="--i: 4">Notificaciones</span>
                       <span class="num-noti">4</span>
                     </a>
                   </li>
                   <li class="link-item">
                     <a href="#" class="link">
                       <ion-icon name="bookmark-outline"></ion-icon
-                      ><span style="--i: 5">bookmarks</span>
+                      ><span style="--i: 5">Historia Clinica</span>
                     </a>
                   </li>
                   <li class="link-item">
                     <a href="#" class="link">
                       <ion-icon name="cog-outline"></ion-icon>
-                      <span style="--i: 6">settings</span>
+                      <span style="--i: 6">Citas</span>
                     </a>
                   </li>
                   <li class="link-item">
                     <a href="#" class="link">
                       <ion-icon name="help-circle-outline"></ion-icon>
-                      <span style="--i: 7">help</span>
+                      <span style="--i: 7">Login</span>
                     </a>
                   </li>
+                  <li class="link-item">
+                    <a href="#" class="link">
+                      <ion-icon name="moon-outline"></ion-icon>
+                      <span style="--i: 8">Doctor Panel</span>
+                    </a>
                   <li class="link-item dark-mode">
                     <a href="#" class="link">
                       <ion-icon name="moon-outline"></ion-icon>
-                      <span style="--i: 8">dark mode</span>
+                      <span style="--i: 8">Modo Oscuro</span>
                     </a>
                   </li>
                   <li class="link-item">
@@ -90,7 +94,12 @@
                   </li>
                 </ul>
               </div>
-        </div>
+              <div class="page-content">
+                <h1>
+                  CONTENIDO DE LA PÁGINA
+                </h1>
+              </div>
+            </div>  
         
               <script
       type="module"
@@ -104,7 +113,6 @@
 
     <script src="{% static 'scripts/script.js' %}"></script>
 
-        </nav>
 
         <div class="main-content">
             {% block content %}

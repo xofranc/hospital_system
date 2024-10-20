@@ -1,7 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
-
 :root {
-  --primary-clr: #7522e6;
+  --primary-clr: #3aafe5;
   --bg-clr: #f2f4f5;
   --white-bg: #fff;
   --dark-text-clr: #363b46;
@@ -9,7 +7,7 @@
   --hover-clr: #f1e8fd;
 }
 body.dark-mode {
-  --primary-clr: #7522e6;
+  --primary-clr: #3aafe5;
   --bg-clr: #1e1e1e;
   --white-bg: #23262b;
   --dark-text-clr: #fff;
@@ -25,19 +23,30 @@ body.dark-mode {
 body {
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start; /* Alineación corregida */
   background: var(--bg-clr);
 }
+
+.page {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
 .navcontainer {
   width: 85px;
-  min-height: 500px;
-  margin: 0 auto;
+  height: 100vh;
   padding: 20px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 0 10px 10px 0;
   background-color: var(--white-bg);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* Transición suave */
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .navcontainer.active {
   width: 250px;
@@ -51,9 +60,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  
 }
 .link-item:last-child {
-  margin-top: 100px;
+  margin-top: 100px; /* Para empujar el último elemento hacia abajo */
 }
 .link-item a {
   display: flex;
@@ -127,4 +137,19 @@ body {
 .link-item.active a .num-noti {
   color: var(--primary-clr);
   background-color: var(--white-bg);
+}
+
+/* Contenido de la página */
+.page-content {
+  
+  padding: 20px;
+  color: var(--dark-text-clr);
+  text-align: center;
+  font-size: 3rem;
+  transition: margin-left 0.3s ease; /* Transición suave */
+}
+
+/* Cuando la barra lateral está activa */
+.navcontainer.active ~ .page-content {
+  margin-left: 0px; /* Margen cuando la barra lateral está expandida */
 }
