@@ -7,6 +7,5 @@ class Paciente(Persona):
     historial_medico = models.TextField(blank=True)
     seguro_medico = models.CharField(max_length=100)
 
-
-class Appointment:
-    pass
+def __str__(self):
+    return f'{self.nombre} {self.apellido} (Paciente)'

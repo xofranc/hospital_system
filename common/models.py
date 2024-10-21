@@ -4,19 +4,15 @@ from django.db import models
 
 
 class Persona(models.Model):
-    # Relacionando con el modelo User
-    user = models.OneToOneField(User, related_name='%(class)s_profile', on_delete=models.CASCADE, null = True)
-
-    # Relacionando con el modelo Group
-    groups = models.ManyToManyField(Group, related_name='%(class)s_profiles', blank=True)
-
-    # Relacionando con el modelo Permission
-    user_permissions = models.ManyToManyField(Permission, related_name='%(class)s_permissions', blank=True)
-
-    # Otros campos comunes para doctores y pacientes
-    first_name = models.CharField(max_length=100, default='Jhon')
-    last_name = models.CharField(max_length=100, default='Smith')
-    id = models.AutoField(primary_key=True)
+    # Campos comunes que pueden ser heredados
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.EmailField(unique=True)
+    phone_number = models.CharField(max_length=15, blank=True, null=True)
+    address = models.TextField(blank=True, null=True)
+    date_of_birth = models.DateField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        abstract = True
+        abstract = True  # Esto indica que este modelo no será creado en la base de datos.
