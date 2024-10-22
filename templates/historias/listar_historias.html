@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Historias Clínicas</title>
+</head>
+<body>
+    <h2>Lista de Historias Clínicas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Paciente</th>
+                <th>Doctor</th>
+                <th>Fecha</th>
+                <th>Ver Detalles</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for historia in historias %}
+            <tr>
+                <td>{{ historia.paciente.username }}</td>
+                <td>{{ historia.doctor.username }}</td>
+                <td>{{ historia.fecha_consulta }}</td>
+                <td><a href="{% url 'detalle_historia_clinica' historia.id %}">Ver Detalles</a></td>
+                <td><a href="{% url 'editar_historia_clinica' historia.id %}">Editar</a></td>
+                <td><a href="{% url 'eliminar_historia_clinica' historia.id %}">Eliminar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

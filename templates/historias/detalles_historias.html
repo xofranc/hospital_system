@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Historia Clínica</title>
+</head>
+<body>
+    <h2>Historia Clínica de {{ historia.paciente.username }}</h2>
+    <p><strong>Doctor:</strong> {{ historia.doctor.username }}</p>
+    <p><strong>Fecha de consulta:</strong> {{ historia.fecha_consulta }}</p>
+    <p><strong>Motivo de consulta:</strong> {{ historia.motivo_consulta }}</p>
+    <p><strong>Síntomas:</strong> {{ historia.sintomas }}</p>
+    <p><strong>Diagnóstico:</strong> {{ historia.diagnostico }}</p>
+    <p><strong>Tratamiento:</strong> {{ historia.tratamiento }}</p>
+    <p><strong>Observaciones:</strong> {{ historia.observaciones }}</p>
+    <p><strong>Antecedentes personales:</strong> {{ historia.antecedentes_personales }}</p>
+    <p><strong>Antecedentes familiares:</strong> {{ historia.antecedentes_familiares }}</p>
+    <p><strong>Alergias:</strong> {{ historia.alergias }}</p>
+    <p><strong>Medicamentos habituales:</strong> {{ historia.medicamentos_habituales }}</p>
+    <p><strong>Próxima consulta:</strong> {{ historia.proximas_consultas }}</p>
+    <p><strong>Recomendaciones:</strong> {{ historia.recomendaciones }}</p>
+    <a href="{% url 'listar_historias_clinicas' %}">Volver a la lista</a>
+</body>
+</html>
