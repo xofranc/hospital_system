@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
+<<<<<<< HEAD
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -122,6 +123,36 @@
             
             {% endblock %}
         </div>
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital System</title>
+{#    <link rel="stylesheet" href="{% static 'css/styles.css' %}">#}
+</head>
+<body>
+
+    <!-- Navbar -->
+    {% block navbar %}
+        {% if user.is_authenticated %}
+            {% if user.is_staff %}
+                <!-- Navbar for doctors (if needed) -->
+                {% include 'partials/doctor_navbar.html' %}
+            {% else %}
+                <!-- Navbar for patients -->
+                {% include 'partials/pacientes_navbar.html' %}
+            {% endif %}
+        {% else %}
+            <!-- Navbar for visitors (unauthenticated users) -->
+            {% include 'partials/visitors_navbar.html' %}
+        {% endif %}
+    {% endblock %}
+
+    <div class="container">
+        {% block content %}
+        <!-- Page specific content will go here -->
+        {% endblock %}
+>>>>>>> origin/updates
     </div>
         
         

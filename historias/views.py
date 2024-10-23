@@ -22,4 +22,4 @@ def crear_historia_clinica(request):
 @login_required
 def doctor_dashboard(request):
     historias = HistoriaClinica.objects.filter(doctor=request.user)  # Obtener las historias clínicas del doctor actual
-    return render(request, 'logins/doctor_dashboard.html', {'historias': historias})
+    return render(request, 'logins/../templates/doctores/doctor_dashboard.html', {'historias': historias})

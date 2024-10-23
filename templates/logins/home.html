@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block content %}
+<<<<<<< HEAD
 
 <div class="page-content">
     <h1>
@@ -14,4 +15,18 @@
     </h1>
 </div>
 
+=======
+    <div class="container">
+        <h1>Bienvenido al Sistema de Hospitales</h1>
+        <p>Esta es la página de inicio del sistema.</p>
+        <p>Desde aquí puedes navegar a las diferentes secciones:</p>
+        <ul>
+            <li><a href="{% url 'doctores:doctor_login'%}">Iniciar Sesión</a></li>
+            <li><a href="{% url 'logins:register' %}">Registro de Pacientes</a></li>
+            <li><a href="{% url 'recetarios:crear_receta' %}">Crear Receta</a></li>
+            <li><a href="{% url 'pacientes:dashboard' %}">Dashboard de Pacientes</a></li>
+            <!-- Agrega más enlaces según sea necesario -->
+        </ul>
+    </div>
+>>>>>>> origin/updates
 {% endblock %}
