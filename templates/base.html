@@ -1,122 +1,125 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+     
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
     <title>{% block title %}Hospital System{% endblock %}</title>
  </head>
-<body>
-          <div class="page"> 
+ <body>
+  <!-- contenedor principal -->
+  <div class="page"> 
+    <!-- barra lateral -->
+  <div class="navcontainer">
+    <!-- seccion de cabecera de slidebar con logo -->
+    <div class="logo">
+      <img src="{% static 'img/4kSGIH.png' %}" alt="Logo SGIH" width="42.519" height="41.7" />
+    </div>
+    
+    <!-- navegacion principal -->
+<div class="nav">
+    <!-- primer menu de navegacion -->
+  <div class="menu">
+    <p class="title">Usuario</p>
+    <ul>
+    <li class="link-items">
+      <li class="link-item active">
+        <a href="{% url 'home' %}" class="link">
+          <ion-icon name="home-outline"></ion-icon>
+          <span style="--i: 1">Home</span>
+        </a>
+      </li>
+      <li class="link-item">
+        <a href="{% url 'paciente_login' %}" class="link">
+          <ion-icon name="person-outline"></ion-icon>
+          <span style="--i: 2">Login</span>
+        </a>
+      </li>
 
-            <div class="navcontainer">
-                <div class="logo">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32.519"
-                    height="30.7"
-                    viewBox="0 0 32.519 30.7"
-                    fill="#363b46"
-                  >
-                    <g id="Logo" transform="translate(-90.74 -84.875)">
-                      <path
-                        id="B"
-                        d="M14.378-30.915c-5.124,0-9.292,3.767-9.292,10.228S9.254-10.46,14.378-10.46h1.471c5.124,0,9.292-3.767,9.292-10.228s-4.168-10.228-9.292-10.228H14.378M11.7-33.456h6.819A12.768,12.768,0,0,1,31.29-20.687,12.768,12.768,0,0,1,18.522-7.919H11.7A12.768,12.768,0,0,1-1.065-20.687C-2.4-51.282,4.652-33.456,11.7-33.456Z"
-                        transform="translate(91.969 123.494)"
-                      />
-                    </g>
-                  </svg>
-                </div>
-                <ul class="link-items">
-                  <li class="link-item active">
-                    <a href="#" class="link">
-                      <ion-icon name="home-outline"></ion-icon>
-                      <span style="--i: 1">Inicio</span>
-                    </a>
-                  </li>
-                  <li class="link-item">
-                    <a href="#" class="link">
-                      <ion-icon name="cube-outline"></ion-icon>
-                      <span style="--i: 2">Info Medica</span>
-                    </a>
-                  </li>
-                  <li class="link-item">
-                    <a href="#" class="link"
-                      ><ion-icon name="search-outline"></ion-icon>
-                      <span style="--i: 3">Panel Paciente</span>
-                    </a>
-                  </li>
-                  <li class="link-item">
-                    <a href="#" class="link">
-                      <ion-icon class="noti-icon" name="notifications-outline"></ion-icon>
-                      <span style="--i: 4">Notificaciones</span>
-                      <span class="num-noti">4</span>
-                    </a>
-                  </li>
-                  <li class="link-item">
-                    <a href="#" class="link">
-                      <ion-icon name="bookmark-outline"></ion-icon
-                      ><span style="--i: 5">Historia Clinica</span>
-                    </a>
-                  </li>
-                  <li class="link-item">
-                    <a href="#" class="link">
-                      <ion-icon name="cog-outline"></ion-icon>
-                      <span style="--i: 6">Citas</span>
-                    </a>
-                  </li>
-                  <li class="link-item">
-                    <a href="#" class="link">
-                      <ion-icon name="help-circle-outline"></ion-icon>
-                      <span style="--i: 7">Login</span>
-                    </a>
-                  </li>
-                  <li class="link-item">
-                    <a href="#" class="link">
-                      <ion-icon name="moon-outline"></ion-icon>
-                      <span style="--i: 8">Doctor Panel</span>
-                    </a>
-                  <li class="link-item dark-mode">
-                    <a href="#" class="link">
-                      <ion-icon name="moon-outline"></ion-icon>
-                      <span style="--i: 8">Modo Oscuro</span>
-                    </a>
-                  </li>
-                  <li class="link-item">
-                    <a href="#" class="link">
-                      <img src="{% static 'img/unknown-user.jpg' %}" alt="" />
-                      <span style="--i: 9">
-                        <h4>ComingSoon</h4>
-                        <p>© SGIH</p>
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="page-content">
-                <h1>
-                  CONTENIDO DE LA PÁGINA
-                </h1>
-              </div>
-            </div>  
-        
-              <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
+      </li>
+    </ul>
+    </div>
 
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+      <!-- segundo menu : Admon -->
+       <div class="menu">
+        <p class="title">Admon</p>
+        <ul>
+          <li class="link-item">
+            <a href="{% url 'doctor_login' %}" class="link">
+              <ion-icon name="person-outline"></ion-icon>
+              <span style="--i: 2">Doctor</span>
+            </a>
+          </li>
+      <li class="link-item">
+      
+        <a href="#" class="link">
+          <ion-icon name="documents-outline"></ion-icon>
+          <span style="--i: 7">Recetas</span>
+          <i class="arrow ph-bold ph-caret-down"></i>
+        </a>
+        <!-- submenu de doctor -->
+        <ul class="sub-menu">
+          <li><a href="#"><span class="text">Crear</span></a></li>
+          <li><a href="#"><span class="text">Listar</span></a></li>
+          <li><a href="#"><span class="text">Descargar</span></a></li>
+        </ul>
+      </li>
+      </ul>
+    </div>
+  </div>    
+
+  <!-- tercer menu : Config -->
+  <div class="menu">
+    <p class="title">Config</p>
+    <ul>
+      <li class="link-item dark-mode">
+        <a href="#" class="link">
+          <ion-icon name="moon-outline"></ion-icon>
+          <span style="--i: 8">dark mode</span>
+        </a>
+      </li>
+      <li class="link-item">
+        <a href="#" class="link">
+          <img src="{% static 'img/unknown-user.jpg' %}" alt="" />
+          <span style="--i: 9">
+            <h4>ComingSoon</h4>
+            <p>© SGIH</p>
+          </span>
+        </a>
+      </li>
+    </ul>
+    </div>
+  </div>
+
+  <!-- contenido central de la página -->
+  <div class="page-content">
+    
+  </div>
+
+</div>
+  
+<!--  -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
 
     <script src="{% static 'scripts/script.js' %}"></script>
 
-
         <div class="main-content">
             {% block content %}
-            <!-- Aquí se mostrará el contenido específico de cada página -->
+            
             {% endblock %}
         </div>
     </div>

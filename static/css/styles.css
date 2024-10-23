@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
 :root {
   --primary-clr: #3aafe5;
   --bg-clr: #f2f4f5;
@@ -18,21 +20,118 @@ body.dark-mode {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 body {
   min-height: 100vh;
   display: flex;
-  align-items: flex-start; /* Alineación corregida */
+  align-items: flex-start;
   background: var(--bg-clr);
 }
 
+
+/*
 .page {
   display: flex;
   align-items: center;
   width: 100%;
   min-height: 100vh;
 }
+*/
+
+
+.menu .title {
+  font-size: 10px;
+  font-weight: 500;
+  color: #757575;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 10px; 
+  text-align: center; /*centra los titulos*/
+}
+
+.nav {
+  flex: 1;
+}
+
+.menu ul li {
+  position: relative;
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.menu ul li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #757575;
+  text-decoration: none;
+  padding: 12px 8px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.menu ul li .text {
+  flex: 1;
+}
+
+/* Flecha inicialmente oculta */
+.menu ul li .arrow {
+  font-size: 14px;
+  opacity: 0; /* Oculta la flecha */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition-delay: 0.4s; /* Delay de 0.5s para mostrar la flecha */
+}
+
+/* Cuando .navcontainer se expande, la flecha se muestra */
+.navcontainer.active .menu ul li .arrow {
+  opacity: 1; /* Muestra la flecha con delay */
+}
+
+/* Animación de rotación cuando el menú está activo */
+.menu ul li.active .arrow {
+  transform: rotate(180deg);
+  transition-delay: 0.1s; /* Sin retraso para la rotación */
+}
+
+/* Afecta solo a los enlaces dentro del submenú */
+.menu ul.sub-menu li > a:hover,
+.menu ul.sub-menu li.active > a {
+  color: #f6f6f6;
+  background-color: var(--primary-clr); /* Color de fondo al pasar el mouse en el submenu */
+}
+
+/* Resetea el color de fondo de las opciones del submenú */
+.menu ul.sub-menu li > a {
+  color: #757575;
+  background-color: transparent; /* Sin color de fondo por defecto */
+}
+
+/* submenu oculto primeramente */
+.menu .sub-menu {
+  display: none;
+  margin-left: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  border-left: 1px solid #f6f6f6;
+}
+
+.menu .sub-menu li a {
+  padding: 10px 8px;
+  font-size: 12px;
+}
+
+.menu:not(:last-child) {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f6f6f6;
+}
+
+
+
+/*  */
 
 .navcontainer {
   width: 85px;
@@ -41,29 +140,27 @@ body {
   overflow: hidden;
   border-radius: 0 10px 10px 0;
   background-color: var(--white-bg);
-  transition: all 0.3s ease; /* Transición suave */
+  transition: all 0.3s ease;
 
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 5px;
 }
 .navcontainer.active {
-  width: 250px;
+  width: 220px;
 }
 .navcontainer .logo {
   width: 100%;
-  margin-bottom: 30px;
 }
 .navcontainer ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  
 }
 .link-item:last-child {
-  margin-top: 100px; /* Para empujar el último elemento hacia abajo */
+  margin-top: 10px; /* Para empujar el último elemento hacia abajo */
 }
 .link-item a {
   display: flex;
@@ -101,55 +198,26 @@ body {
 .link-item ion-icon {
   min-width: 20px;
   min-height: 20px;
-  margin-right: 20px;
+  margin-left: 5px;
   position: relative;
 }
 .link-item img {
   width: 30px;
   height: 30px;
-  margin-right: 20px;
   border-radius: 50%;
-}
-.link-item ion-icon.noti-icon::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 3px;
-  right: 2px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--primary-clr);
-  border: 1px solid var(--white-bg);
-}
-.link-item a .num-noti {
-  margin-left: 40px;
-  font-size: 12px;
-  color: var(--light-text-clr);
-  background-color: var(--primary-clr);
-  min-width: 15px;
-  height: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-.link-item.active a .num-noti {
-  color: var(--primary-clr);
-  background-color: var(--white-bg);
 }
 
-/* Contenido de la página */
+
+/*
 .page-content {
-  
-  padding: 20px;
+  width: 100%;
   color: var(--dark-text-clr);
-  text-align: center;
-  font-size: 3rem;
-  transition: margin-left 0.3s ease; /* Transición suave */
+  transition: margin-left 0.3s ease;
 }
 
-/* Cuando la barra lateral está activa */
+
 .navcontainer.active ~ .page-content {
-  margin-left: 0px; /* Margen cuando la barra lateral está expandida */
+  margin-left: 0px;
 }
+
+*/
