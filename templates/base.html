@@ -1,3 +1,5 @@
+{% comment %} visitors_nav.html {% endcomment %}
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
@@ -6,21 +8,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-     
+
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
     <title>{% block title %}Hospital System{% endblock %}</title>
  </head>
  <body>
   <!-- contenedor principal -->
-  <div class="page"> 
+  <div class="page">
     <!-- barra lateral -->
   <div class="navcontainer">
     <!-- seccion de cabecera de slidebar con logo -->
     <div class="logo">
       <img src="{% static 'img/4kSGIH.png' %}" alt="Logo SGIH" width="42.519" height="41.7" />
     </div>
-    
+
     <!-- navegacion principal -->
 <div class="nav">
     <!-- primer menu de navegacion -->
@@ -35,7 +37,7 @@
         </a>
       </li>
       <li class="link-item">
-        <a href="#" class="link">
+        <a href="{% url 'pacientes:login' %}" class="link">
           <ion-icon name="person-outline"></ion-icon>
           <span style="--i: 2">Login</span>
         </a>
@@ -47,16 +49,19 @@
 
       <!-- segundo menu : Admon -->
        <div class="menu">
-        <p class="title">Admon</p>
+        <p class="title">Doctor</p>
         <ul>
           <li class="link-item">
-            <a href="#" class="link">
-              <ion-icon name="person-outline"></ion-icon>
-              <span style="--i: 2">Doctor</span>
+            <a href="{% url 'doctores:doctor_login'%}" class="link">
+              <ion-icon name="people-outline"></ion-icon>
+              <span style="--i: 2">Login</span>
             </a>
           </li>
+
+{% comment %}  
+
       <li class="link-item">
-      
+
         <a href="#" class="link">
           <ion-icon name="documents-outline"></ion-icon>
           <span style="--i: 7">Recetas</span>
@@ -69,9 +74,14 @@
           <li><a href="#"><span class="text">Descargar</span></a></li>
         </ul>
       </li>
+
+{% endcomment %}
+
       </ul>
     </div>
-  </div>    
+
+  </div>
+
 
   <!-- tercer menu : Config -->
   <div class="menu">
@@ -98,11 +108,11 @@
 
   <!-- contenido central de la página -->
   <div class="page-content">
-    
+
   </div>
 
 </div>
-  
+
 <!--  -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -119,11 +129,11 @@
 
         <div class="main-content">
             {% block content %}
-            
+
             {% endblock %}
         </div>
     </div>
-        
-        
+
+
 </body>
 </html>

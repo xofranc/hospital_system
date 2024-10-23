@@ -221,3 +221,17 @@ body {
 }
 
 */
+
+
+
+/*home*/
+
+
+.main-content{
+  position: relative;
+}
+
+.main-content .page-content {
+  
+  position: center;
+}
