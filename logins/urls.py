@@ -6,20 +6,9 @@ app_name = 'logins'
 
 urlpatterns = [
     path('', views.home, name='home'),
-<<<<<<< HEAD
-    path('login/', views.paciente_login, name='paciente_login'),
-    path('dashboard/', views.paciente_dashboard, name='paciente_dashboard'),
-    
-    #register esta implementado en paciente_login
-    path('register/', views.register, name='register'), 
-    
-    path('doctor/login/', views.doctor_login, name='doctor_login'),
-    path('doctor/dashboard/', views.doctor_dashboard, name='doctor_dashboard'),
-=======
     # path('login/', views.paciente_login, name='paciente_login'),
     path('register/', views.register, name='register'),
 
->>>>>>> origin/updates
     path('medical-info/', medical_info_view, name='medical_info'),
     path('schedule-appointment/', schedule_appointment, name='schedule_appointment'),  # Nueva URL
     # path('logout/', views.out, name='logout'),
