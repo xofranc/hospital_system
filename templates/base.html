@@ -10,6 +10,8 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles_login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/doctor_login.css' %}">
 
     <title>{% block title %}Hospital System{% endblock %}</title>
  </head>
@@ -80,7 +82,6 @@
       </ul>
     </div>
 
-  </div>
 
 
   <!-- tercer menu : Config -->
@@ -104,16 +105,14 @@
       </li>
     </ul>
     </div>
+
+    {% comment %} cierra div nav {% endcomment %}
   </div>
 
-  <!-- contenido central de la página -->
-  <div class="page-content">
-
-  </div>
-
+  {% comment %} cierra div navcontainer {% endcomment %}
 </div>
 
-<!--  -->
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script
@@ -125,13 +124,15 @@
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
   ></script>
 
-    <script src="{% static 'scripts/script.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
 
         <div class="main-content">
             {% block content %}
 
             {% endblock %}
         </div>
+
+        {% comment %} cierra div nav {% endcomment %}
     </div>
 
 

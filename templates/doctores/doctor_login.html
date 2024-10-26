@@ -1,12 +1,13 @@
 <!-- templates/logins/doctor_login.html -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesión para Doctores</title>
-</head>
+{% extends 'base.html' %}
+
+{% block title %}
+    Doctor Login
+{% endblock %}
+
+{% block content %}
 <body>
+<div class="login-doctores-container">
     <h1>Inicio de Sesión para Doctores</h1>
     <form method="post">
         {% csrf_token %}
@@ -20,5 +21,7 @@
         <p>No tienes una Cuenta?, Contacta con un administrador</p>
         <p>Eres un Paciente? <a href="{% url 'pacientes:login' %}">Inicia Sesion Aqui!</a></p>
     </form>
+</div>
 </body>
 </html>
+{% endblock %}

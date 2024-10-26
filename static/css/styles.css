@@ -30,14 +30,14 @@ body {
 }
 
 
-/*
+
 .page {
   display: flex;
   align-items: center;
   width: 100%;
   min-height: 100vh;
 }
-*/
+
 
 
 .menu .title {
@@ -207,31 +207,13 @@ body {
   border-radius: 50%;
 }
 
-
-/*
-.page-content {
-  width: 100%;
-  color: var(--dark-text-clr);
-  transition: margin-left 0.3s ease;
-}
-
-
-.navcontainer.active ~ .page-content {
-  margin-left: 0px;
-}
-
-*/
-
-
-
 /*home*/
 
 
 .main-content{
-  position: relative;
-}
-
-.main-content .page-content {
-  
-  position: center;
+    margin-left: 25%;
+    padding: 20px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+    background-color: white;
+    border-radius: 40px;
 }
