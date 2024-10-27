@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles_login.css' %}">
     <link rel="stylesheet" href="{% static 'css/doctor_login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
 
     <title>{% block title %}Hospital System{% endblock %}</title>
  </head>
@@ -22,7 +23,9 @@
   <div class="navcontainer">
     <!-- seccion de cabecera de slidebar con logo -->
     <div class="logo">
-      <img src="{% static 'img/4kSGIH.png' %}" alt="Logo SGIH" width="42.519" height="41.7" />
+      <a href="{% url 'home' %}" class="link">
+      <img src="{% static 'img/SGIH.png' %}" alt="Logo SGIH" width="42.519" height="41.7" />
+      </a>
     </div>
 
     <!-- navegacion principal -->

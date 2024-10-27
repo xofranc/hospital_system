@@ -36,6 +36,30 @@ body {
   align-items: center;
   width: 100%;
   min-height: 100vh;
+  background: linear-gradient(
+    45deg,
+    #fff,
+    #3498db
+  ); /* Gradient background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  border-radius: 10px; /* Rounded corners */
+  position: relative;
+  overflow: hidden;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none; /* Allow clicking through the pattern layer */
 }
 
 
@@ -160,7 +184,7 @@ body {
   gap: 10px;
 }
 .link-item:last-child {
-  margin-top: 10px; /* Para empujar el último elemento hacia abajo */
+  margin-top: 1px; /* Para empujar el último elemento hacia abajo */
 }
 .link-item a {
   display: flex;
@@ -212,8 +236,10 @@ body {
 
 .main-content{
     margin-left: 25%;
+    /*
     padding: 20px;
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
     background-color: white;
     border-radius: 40px;
+    */
 }
