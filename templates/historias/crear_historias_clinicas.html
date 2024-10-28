@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+<!-- templates/historias/crear_historia_clinica.html -->
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Historia Clínica</title>
+</head>
+<body>
+    <h1>Crear Historia Clínica</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Historia</button>
+    </form>
+</body>
+</html>
+{% endblock %}

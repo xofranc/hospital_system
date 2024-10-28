@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+{% block content %}
+<h1>Bienvenido al sistema hospitalario</h1>
+<!-- templates/farmacias/enviar_receta.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Enviar Receta a Farmacia</title>
+</head>
+<body>
+    <h1>Enviar Receta a Farmacia</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar a Farmacia</button>
+    </form>
+</body>
+</html>
+{% endblock %}

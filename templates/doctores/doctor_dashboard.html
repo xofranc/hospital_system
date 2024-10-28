@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+{% block content %}
+<!-- templates/logins/doctor_dashboard.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard del Doctor</title>
+</head>
+<body>
+    <h1>Bienvenido al área de trabajo, Doctor</h1>
+
+    <h2>Historias Clínicas</h2>
+    <ul>
+        {% for historia in historias %}
+            <li>{{ historia.paciente.username }} - {{ historia.descripcion }} ({{ historia.fecha_creacion }})</li>
+        {% empty %}
+            <li>No has creado ninguna historia clínica aún.</li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="{% url 'crear_historia_clinica' %}">Crear nueva historia clínica</a></p>
+
+    <!-- templates/logins/doctor_dashboard.html -->
+    <p><a href="{% url 'crear_receta_medica' %}">Crear nueva receta médica</a></p>
+    <p><a href="{% url 'listar_recetas_medicas' %}">Ver mis recetas médicas</a></p>
+
+</body>
+</html>
+{% endblock %}

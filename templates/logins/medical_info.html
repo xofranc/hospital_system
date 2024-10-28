@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+<!-- logins/templates/logins/medical_info.html -->
+
+
+{% block content %}
+<h2>Información Médica Adicional</h2>
+{% if medical_info %}
+    <p><strong>Alergias:</strong> {{ medical_info.allergies }}</p>
+    <p><strong>Condiciones Médicas:</strong> {{ medical_info.medical_conditions }}</p>
+    <p><strong>Medicamentos:</strong> {{ medical_info.medications }}</p>
+{% else %}
+    <p>No hay información médica adicional disponible.</p>
+{% endif %}
+<a href="{% url 'dashboard' %}">Volver al Dashboard</a>
+{% endblock %}
