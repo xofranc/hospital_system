@@ -206,3 +206,10 @@
     color: #8B8E98;
     text-decoration: underline;
   }
+
+  .login-doctores-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

@@ -7,6 +7,7 @@
 
 {% block content %}
 <body>
+  <div class="register-paciente-container">
     <form method="post">
         {% csrf_token %}
         <div class="form-container">
@@ -34,7 +35,7 @@
                 <label for="terms">Acepto los <a href="#">Terminos y Condiciones</a></label>
               </div>
       
-              <button type="submit">Registrarse</button>
+              <button class="register "type="submit">Registrarse</button>
             </div>
             <div class="separator">
                 <hr class="line">
@@ -45,9 +46,10 @@
             <p class="note">Ya tienes una cuenta? <a href="{% url 'pacientes:login' %}">Inicia sesión aquí</a>
             </div>
         </div>
+        
     </div>
   </form>
-
+</div>
 </body>
 </html>
 {% endblock %}
