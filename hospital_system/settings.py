@@ -37,13 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'logins',
-    'historias',
-    'farmacias',
-    'recetarios',
-    'common',
-    'doctores',
-    'pacientes'
+    # 'logins',
+    # 'historias',
+    # 'farmacias',
+    # 'recetarios',
+    # 'common',
+    # 'doctores',
+    # 'pacientes',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'common.middleware.RedirectLoginMiddleware',
+
 ]
 
 ROOT_URLCONF = 'hospital_system.urls'
@@ -136,4 +139,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # hospital_system/settings.py
 
-LOGIN_URL = 'logins:login'  # Asegúrate de que esta URL coincida con tu vista de inicio de sesión
+LOGIN_URL = 'common:redirect_logins'  # Asegúrate de que esta URL coincida con tu vista de inicio de sesión
+
+
+AUTH_USER_MODEL = "users.Usuarios"  
+
+AUTHENTICATION_BACKENDS = [
+    "users.backends.EmailPasswordBackend",
+    "django.contrib.auth.backends.ModelBackend",
+]
