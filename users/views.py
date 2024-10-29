@@ -3,6 +3,8 @@ from django.contrib.auth import login
 from django.shortcuts import redirect, render
 from django.contrib.auth.forms import AuthenticationForm
 from django.http import HttpResponse
+from .forms import Doctor_register_form
+from .models import Usuarios
 
 
 
@@ -19,18 +21,34 @@ def paciente_login(request):
             messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
     else:
         form = AuthenticationForm()
-    return render(request, 'doctores/login.html', {'forms': form})
+    return render(request, 'doctor/login.html', {'forms': form})
 
-def user_register(request):
-    # if this is a POST request we'll process the form data
+
+def paciente_register(request):
+    pass
+
+def doctor_login(request):
+    pass
+
+def doctor_register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = Doctor_register_form(request.POST)
         if form.is_valid():
-            # save the form data to the database
-            user = form.save()
-            # log the user in
-            login(request, user)
-            return HttpResponseRedirect('success')  # Redirect to a success page
+            print(form.cleaned_data)
+            Usuarios.objects.create_user(role_data={
+                'licence_number': form.cleaned_data['licence_number'],
+                'name': form.cleaned_data['name'],
+                'speciality': form.cleaned_data['speciality'],
+                'last_name': form.cleaned_data['lastName'],
+                'address': form.cleaned_data['address'],
+                'phone_number': form.cleaned_data['phone_number'],
+            }, base_data= {
+                'email': form.cleaned_data['email'],
+                'password': form.cleaned_data['password'],
+            }, user_role='doctors')
+            messages.success(request, 'Registro exitoso.')
+        else:
+            print(form.errors)
     else:
-        form = UserCreationForm()
-    return render(request, 'doctores/register.html', {'form': form})
+        form = Doctor_register_form()
+    return render(request, 'doctor/register.html', {'form': form})

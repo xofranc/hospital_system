@@ -29,7 +29,7 @@ class UserManager(BaseUserManager):
             related_model = ContentType.objects.get(
                 model=related_model_name
             ).model_class()
-            related_instance = related_model.objects.create(role_data)
+            related_instance = related_model.objects.create(**role_data)
 
         email = base_data.pop("email")
         password = base_data.pop("password")
@@ -53,10 +53,19 @@ class UserManager(BaseUserManager):
             base_data=base_data,
         )
     
+    def doctors(self, base_data, role_data):
+        base_data.setdefault("is_staff", False)
+        base_data.setdefault("is_superuser", False)
+        base_data.setdefault("is_active", True)
+        return self._create_user(
+            related_model_name='doctors',
+            role_data=role_data,
+            base_data=base_data,
+        )
     
     def create_user(self, role_data,user_role, base_data):
     
-        map_creation_method = {'pacientes': self.pacientes}
+        map_creation_method = {'pacientes': self.pacientes, 'doctors': self.doctors}
         return map_creation_method[user_role](
             role_data=role_data, base_data=base_data
         )
@@ -120,3 +129,14 @@ class Usuarios(AbstractBaseUser, PermissionsMixin):
         ct_field="content_type",
         fk_field="role_data_id",
     )
+    
+    
+class Doctors(models.Model):
+    licence_number = models.BigIntegerField(max_length=20)
+    speciality = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    address = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=10)
+    
+    
