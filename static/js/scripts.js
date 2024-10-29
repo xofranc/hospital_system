@@ -1,5 +1,5 @@
-// Código 1 Actualizado: Manejo de menú con submenús al pasar el mouse
-$(".menu > ul > li").mouseenter(function (e) {
+  // Código 1: Interacciones de menú
+  $(".menu > ul > li").mouseenter(function (e) {
     // Elimina la clase "active" de todos los elementos hermanos del <li> sobre el que se pasó el ratón.
     $(this).siblings().removeClass("active");
   
@@ -22,7 +22,7 @@ $(".menu > ul > li").mouseenter(function (e) {
     $(this).removeClass("active");
   });
   
-  // Código 2: Funcionalidades adicionales (hover en navcontainer, dark mode, etc.)
+  // Código 2: Interacciones de navcontainer y dark mode
   const navcontainer = document.querySelector(".navcontainer");
   const linkItems = document.querySelectorAll(".link-item");
   const darkMode = document.querySelector(".dark-mode");
@@ -55,11 +55,10 @@ $(".menu > ul > li").mouseenter(function (e) {
     if (document.body.classList.contains("dark-mode")) {
       darkMode.querySelector("span").textContent = "dark mode";
       darkMode.querySelector("ion-icon").setAttribute("name", "moon-outline");
-      
     } else {
       darkMode.querySelector("span").textContent = "light mode";
       darkMode.querySelector("ion-icon").setAttribute("name", "sunny-outline");
-      
     }
     document.body.classList.toggle("dark-mode");
   });
+

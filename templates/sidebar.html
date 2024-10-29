@@ -129,31 +129,15 @@
 
 <script src="{% static 'js/scripts.js' %}"></script>
 
+  <!-- Vincula el JavaScript de Swiper -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="{% static 'js/swiper.js' %}"></script>
 
         <div class="main-content">
             {% block content %}
-            <div class="home-page-content">
-                <div class="swiper-container listSlider">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="{% static 'img/0.jpeg' %}" alt="Slide 1"></div>
-                        <div class="swiper-slide"><img src="{% static 'img/1.jpeg' %}" alt="Slide 2"></div>
-                        <div class="swiper-slide"><img src="{% static 'img/2.jpeg' %}" alt="Slide 3"></div>
-                        <div class="swiper-slide"><img src="{% static 'img/3.jpeg' %}" alt="Slide 4"></div>
-                    </div>
-                    <!-- Botones de navegación -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <!-- Paginación -->
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
+
             {% endblock %}
         </div>
-
-  <!-- Vincula el JavaScript de Swiper -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="{% static 'js/swiper.js' %}"></script>
-  
 
         {% comment %} cierra div page {% endcomment %}
     </div>
