@@ -1,6 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 
+:root {
+  --primary-clr: #3aafe5;
+  --bg-clr: #f2f4f5;
+  --white-bg: #fff;
+  --dark-text-clr: #363b46;
+  --light-text-clr: #fff;
+  --hover-clr: #f1e8fd;
+}
+body.dark-mode {
+  --primary-clr: #3aafe5;
+  --bg-clr: #1e1e1e;
+  --white-bg: #23262b;
+  --dark-text-clr: #fff;
+  --light-text-clr: #fff;
+  --hover-clr: #31313f;
+}
 
 .form-container {
+  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,7 +29,7 @@
   .form-box {
     width: 100%;
     max-width: 24rem;
-    background-color: #fff;
+    background-color: var(--white-bg);
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5e7eb;
