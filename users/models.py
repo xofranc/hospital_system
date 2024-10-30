@@ -132,11 +132,22 @@ class Usuarios(AbstractBaseUser, PermissionsMixin):
     
     
 class Doctors(models.Model):
-    licence_number = models.BigIntegerField(max_length=20)
+    licence_number = models.BigIntegerField()
     speciality = models.CharField(max_length=50)
     name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=10)
+    identification_number = models.BigIntegerField(default=0)
     
+    
+    
+class Paciente(models.Model):
+    identification_number = models.BigIntegerField()
+    name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    rh = models.CharField(max_length=5)
+    address = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=10)
+    estado_civil = models.CharField(max_length=30)
     
