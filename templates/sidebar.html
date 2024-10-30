@@ -27,7 +27,7 @@
   <div class="navcontainer">
     <!-- seccion de cabecera de slidebar con logo -->
     <div class="logo">
-      <a href="{% url 'home' %}" class="link">
+      {% comment %} <a href="{% url 'logins:home' %}" class="link">     IMPORTANTE    {% endcomment %}
 
         <svg id="logo-35" width="50" height="39" viewBox="0 0 50 39" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z" class="ccompli1" fill="#007AFF"></path> <path d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z" class="ccustom" fill="#312ECB"></path> </svg>
    
@@ -42,13 +42,13 @@
     <ul>
     <li class="link-items">
       <li class="link-item active">
-        <a href="{% url 'home' %}" class="link">
+        {% comment %} <a href="{% url 'home' %}" class="link"> {% endcomment %}
           <ion-icon name="home-outline"></ion-icon>
           <span style="--i: 1">Home</span>
         </a>
       </li>
       <li class="link-item">
-        <a href="{% url 'pacientes:login' %}" class="link">
+        {% comment %} <a href="{% url 'pacientes:login' %}" class="link"> {% endcomment %}
           <ion-icon name="person-outline"></ion-icon>
           <span style="--i: 2">Login</span>
         </a>
@@ -63,7 +63,7 @@
         <p class="title">Doctor</p>
         <ul>
           <li class="link-item">
-            <a href="{% url 'doctores:doctor_login'%}" class="link">
+            {% comment %} <a href="{% url 'doctores:doctor_login'%}" class="link"> {% endcomment %}
               <ion-icon name="people-outline"></ion-icon>
               <span style="--i: 2">Login</span>
             </a>
@@ -129,31 +129,15 @@
 
 <script src="{% static 'js/scripts.js' %}"></script>
 
+  <!-- Vincula el JavaScript de Swiper -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="{% static 'js/swiper.js' %}"></script>
 
         <div class="main-content">
             {% block content %}
-            <div class="home-page-content">
-                <div class="swiper-container listSlider">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="{% static 'img/0.jpeg' %}" alt="Slide 1"></div>
-                        <div class="swiper-slide"><img src="{% static 'img/1.jpeg' %}" alt="Slide 2"></div>
-                        <div class="swiper-slide"><img src="{% static 'img/2.jpeg' %}" alt="Slide 3"></div>
-                        <div class="swiper-slide"><img src="{% static 'img/3.jpeg' %}" alt="Slide 4"></div>
-                    </div>
-                    <!-- Botones de navegación -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <!-- Paginación -->
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
+
             {% endblock %}
         </div>
-
-  <!-- Vincula el JavaScript de Swiper -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="{% static 'js/swiper.js' %}"></script>
-  
 
         {% comment %} cierra div page {% endcomment %}
     </div>

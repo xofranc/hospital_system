@@ -139,7 +139,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # hospital_system/settings.py
 
-LOGIN_URL = 'common:redirect_logins'  # Asegúrate de que esta URL coincida con tu vista de inicio de sesión
+# LOGIN_URL = 'common:redirect_logins'  # Asegúrate de que esta URL coincida con tu vista de inicio de sesión
 
 
 AUTH_USER_MODEL = "users.Usuarios"  

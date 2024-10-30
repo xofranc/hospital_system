@@ -1,10 +1,193 @@
+
+
+{% comment %}  
+<nav class="sidebar">
+    <ul>
+        <li><a href="{% url 'doctor_dashboard' %}">Dashboard</a></li>
+        <li><a href="{% url 'doctor_historial_medico' %}">Historial Médico</a></li>
+        <li><a href="{% url 'doctor_pacientes' %}">Gestionar Pacientes</a></li>
+        <li><a href="{% url 'doctor_agendar_cita' %}">Agendar Citas</a></li>
+        <li><a href="{% url 'doctor_calendario' %}">Calendario de Citas</a></li>
+        <li><a href="{% url 'doctor_recetas' %}">Recetas Médicas</a></li>
+
+        <li><a href="{% url 'doctor_facturacion' %}">Facturación de Medicamentos</a></li>
+        <li><a href="{% url 'doctor_reportes' %}">Generar Reportes</a></li>
+
+        <li><a href="{% url 'doctor_notificaciones' %}">Notificaciones</a></li>
+        <li><a href="{% url 'doctor_telemedicina' %}">Telemedicina</a></li>
+        <li><a href="{% url 'doctor_emergencias' %}">Emergencias</a></li>
+        
+        <li><a href="{% url 'logout' %}">Cerrar Sesión</a></li>
+        <li><a href="{% url 'doctor_perfil' %}">Mi Perfil</a></li>
+    </ul>
+</nav>
+{% endcomment %}
+
+
+
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+
+
+    <link rel="stylesheet" href="{% static 'css/doctor-sidebar.css' %}">
+<!--
+    <link rel="stylesheet" href="{% static 'css/styles_login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/doctor_login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+-->
+
+    <link rel="stylesheet" href="{% static 'css/' %}">
+    <link rel="stylesheet" href="{% static 'css/' %}">
+    <link rel="stylesheet" href="{% static 'css/' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/' %}">
+    <link rel="stylesheet" href="{% static 'css/' %}">
+    <link rel="stylesheet" href="{% static 'css/' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/' %}">
+    <link rel="stylesheet" href="{% static 'css/' %}">
+    <link rel="stylesheet" href="{% static 'css/' %}">
+
+    <title>{% block title %}Hospital System - Doctor{% endblock %}</title>
+ </head>
+ <body>
+  <!-- contenedor principal -->
+  <div class="page">
+    <!-- barra lateral -->
+  <div class="navcontainer">
+    <!-- seccion de cabecera de slidebar con logo -->
+    <div class="logo">
+      <a href="{% url 'home' %}" class="link">
+
+        <svg id="logo-35" width="50" height="39" viewBox="0 0 50 39" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z" class="ccompli1" fill="#007AFF"></path> <path d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z" class="ccustom" fill="#312ECB"></path> </svg>
+        
+        {% comment %}  
+      <img src="{% static 'img/SGIH.png' %}" alt="Logo SGIH" width="42.519" height="41.7" />
+      {% endcomment %}
+      
+      </a>
+    </div>
+
+    <!-- navegacion principal -->
+<div class="nav">
+    <!-- primer menu de navegacion -->
+  <div class="menu">
+    <p class="title">Doctor</p>
+    <ul>
+    <li class="link-items">
+
+      <li class="link-item">
+        <a href="{% url 'doctor_dashboard' %}" class="link">
+          <ion-icon name="documents-outline"></ion-icon>
+          <span style="--i: 1">Dashboard</span>
+          <i class="arrow ph-bold ph-caret-down"></i>
+        </a>
+        <!-- submenu de doctor -->
+        <ul class="sub-menu">
+          <li><a href="{% url 'doctor_historial_medico' %}"><span class="text">Historial Medico</span></a></li>
+          <li><a href="{% url 'doctor_pacientes' %}"><span class="text">Gestionar Pacientes</span></a></li>
+          <li><a href="{% url 'doctor_agendar_cita' %}"><span class="text">Agendar Citas</span></a></li>
+          <li><a href="{% url 'doctor_calendario' %}"><span class="text">Calendario de Citas</span></a></li>
+          <li><a href="{% url 'doctor_recetas' %}"><span class="text">Recetas Medicas</span></a></li>
+        </ul>
+      </li>
+
+      <li class="link-item">
+        <a href="{% url 'doctor_facturacion' %}" class="link">
+          <ion-icon name="documents-outline"></ion-icon>
+          <span style="--i: 2">Facturar Medicamentos</span>
+          <i class="arrow ph-bold ph-caret-down"></i>
+        </a>
+        <!-- submenu de doctor -->
+        <ul class="sub-menu">
+          <li><a href="{% url 'doctor_reportes' %}"><span class="text">Generar Reportes</span></a></li>
+        </ul>
+      </li>
+
+      <li class="link-item">
+        <a href="{% url 'doctor_notificaciones' %}" class="link">
+          <ion-icon name="documents-outline"></ion-icon>
+          <span style="--i: 3">Notificaciones</span>
+          <i class="arrow ph-bold ph-caret-down"></i>
+        </a>
+        <!-- submenu de doctor -->
+        <ul class="sub-menu">
+          <li><a href="{% url 'doctor_telemedicina' %}"><span class="text">TeleMedicina</span></a></li>
+          <li><a href="{% url 'doctor_emergencias' %}"><span class="text">Emergencias</span></a></li>
+        </ul>
+      </li>
+
+      </li>
+    </ul>
+    </div>
+
+
+  <!-- segundo menu : Config -->
+  <div class="menu">
+    <p class="title">Config</p>
+    <ul>
+        <li class="link-item">
+            <a href="{% url 'logout' %}" class="link">
+                <ion-icon name="log-out-outline"></ion-icon>
+              <span style="--i: 4">Cerrar Sesion</span>
+            </a>
+          </li>
+{% comment %}  
+      <li class="link-item dark-mode">
+        <a href="#" class="link">
+          <ion-icon name="moon-outline"></ion-icon>
+          <span style="--i: 9">dark mode</span>
+        </a>
+      </li>
+{% endcomment %}
+      <li class="link-item">
+        <a href="{% url 'doctor_perfil' %}" class="link">
+          <img src="{% static 'img/unknown-user.jpg' %}" alt="" />
+          <span style="--i: 5">
+            <h4>Mi Perfil</h4>
+            <p>DOCTOR</p>
+          </span>
+        </a>
+      </li>
+    </ul>
+    </div>
+
+    <!-- cierra div nav  -->
+  </div>
+
+   <!-- cierra div navcontainer  -->
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+
+        <div class="main-content">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+
+        <!-- cierra div nav  -->
+    </div>
+
 
 </body>
 </html>

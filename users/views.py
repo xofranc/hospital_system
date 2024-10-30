@@ -62,7 +62,7 @@ def doctor_login(request):
             messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
     else:
         form = AuthenticationForm()
-    return render(request, 'doctor/login.html', {'forms': form})
+    return render(request, 'doctor/login.html')
 
 def doctor_register(request):
     if request.method == 'POST':
