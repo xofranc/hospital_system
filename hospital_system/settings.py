@@ -90,9 +90,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hospital',  # Cambia esto por el nombre de tu base de datos
         'USER': 'root',             # Tu usuario de MySQL
-        'PASSWORD': '',      # Tu contraseña de MySQL   #Temporalmente sin contraseña para pruebas de frontend 
+        'PASSWORD': '1003540355',      # Tu contraseña de MySQL
         'HOST': 'localhost',                     # O el host que estés utilizando
-        'PORT': '3306',                         # El puerto por defecto de MySQL
+        'PORT': '3306',                          # El puerto por defecto de MySQL
     }
 }
 
@@ -131,10 +131,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
