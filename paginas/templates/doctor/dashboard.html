@@ -9,7 +9,7 @@
 
     <h1>Bienvenido al área de trabajo, Doctor</h1>
 
-    <h2>Historias Clínicas</h2>
+    {% comment %} <h2>Historias Clínicas</h2>
     <ul>
         {% for historia in historias %}
             <li>{{ historia.paciente.username }} - {{ historia.descripcion }} ({{ historia.fecha_creacion }})</li>
@@ -23,5 +23,5 @@
     <!-- templates/logins/doctor_dashboard.html -->
     <p><a href="{% url 'crear_receta_medica' %}">Crear nueva receta médica</a></p>
     <p><a href="{% url 'listar_recetas_medicas' %}">Ver mis recetas médicas</a></p>
-    
+     {% endcomment %}
 {% endblock %}

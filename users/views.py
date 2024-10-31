@@ -16,12 +16,13 @@ def paciente_login(request):
             user = form.get_user()
             login(request, user)
             return render(request, 'pacientes/dashboard.html',)
+            # return HttpResponse('Loggeado')
 
         else:
             messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
     else:
         form = AuthenticationForm()
-    return render(request, 'pacientes/login.html', {'forms': form})
+    return render(request, 'pacientes/login.html', {'form_paciente': form})
 
 
 def paciente_register(request):
@@ -46,7 +47,7 @@ def paciente_register(request):
             print(form.errors)
     else:
         form = Paciente_register_form()
-    return render(request, 'pacientes/register.html', {'form': form})
+    return render(request, 'pacientes/register.html', {'form_register_paciente': form})
         
         
 
@@ -56,13 +57,14 @@ def doctor_login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return render(request, 'doctor/dashboard.html',)
+            # return render(request, 'doctor/dashboard.html',)
+            return HttpResponse('Doctor dashboard')  # Redirect to doctor dashboard page after successful login.  # Replace with appropriate view for doctor dashboard.  # Make sure to include necessary permissions in the view.  # Also, make sure to include necessary security measures to protect the dashboard.  # For example, using Django's built-in authentication views with permissions.  # Make sure to include necessary security measures to protect the dashboard.  # For example, using Django's built-in authentication views with permissions.  # Also, make sure to include necessary security measures to protect the dashboard.  # For example, using Django's built-in authentication views with permissions.  # Also, make sure to include necessary security measures to protect the dashboard.  # For example, using Django's built-in authentication views with permissions.  # Also, make sure to include necessary security measures to protect the dashboard.  # For example, using Django's built-in authentication views with permissions.  # Also
 
         else:
             messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
     else:
         form = AuthenticationForm()
-    return render(request, 'doctor/login.html')
+    return render(request, 'doctor/doctor_login.html', {'form_doctor': form})
 
 def doctor_register(request):
     if request.method == 'POST':
@@ -85,4 +87,7 @@ def doctor_register(request):
             print(form.errors)
     else:
         form = Doctor_register_form()
-    return render(request, 'doctor/register.html', {'form': form})
+    return render(request, 'doctor/register.html', {'form_register_doctor': form})
+
+def home(request):
+    return render(request, 'home.html')

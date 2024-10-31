@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     # 'common',
     # 'doctores',
     # 'pacientes',
-    'users'
+    'users',
+    'paginas',
 ]
 
 MIDDLEWARE = [

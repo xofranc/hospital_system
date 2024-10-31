@@ -70,3 +70,8 @@ class Paciente_register_form(forms.Form):
         if Paciente.objects.filter(identification_number=identification_number).first():
             raise forms.ValidationError("El número de identificación ya está registrado")
         return identification_number
+    
+class Paciente_login_form(forms.Form):
+    
+    email = forms.EmailField(max_length=100)
+    password = forms.CharField(widget=forms.PasswordInput, min_length=8, max_length=20)

@@ -1,8 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'sidebar.html' %}
 
 {% block title %}Inicio{% endblock %}
 
-<!-- templates/logins/paciente_dashboard.html -->
+
 {% block content %}
 <!DOCTYPE html>
 <html lang="es">
@@ -15,7 +15,7 @@
     <h1>Bienvenido, {{ user.username }}</h1>
     
     <h2>Mis Recetas Médicas</h2>
-    <ul>
+    {% comment %} <ul>
         {% for receta in recetas %}
             <li>
                 Receta del Dr. {{ receta.doctor.username }} - Medicamentos: {{ receta.medicamentos }} 
@@ -27,7 +27,7 @@
         {% endfor %}
     </ul>
     
-    <p><a href="{% url 'logins:logout' %}">Cerrar sesión</a></p>
+    <p><a href="{% url 'logins:logout' %}">Cerrar sesión</a></p> {% endcomment %}
 </body>
 </html>
 {% endblock %}
