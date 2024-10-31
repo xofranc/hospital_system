@@ -7,6 +7,8 @@
   --dark-text-clr: #363b46;
   --light-text-clr: #fff;
   --hover-clr: #f1e8fd;
+  --login-title: #212121;
+  --frg-pass-btn-bg: #fff;
 }
 body.dark-mode {
   --primary-clr: #3aafe5;
@@ -15,6 +17,8 @@ body.dark-mode {
   --dark-text-clr: #fff;
   --light-text-clr: #fff;
   --hover-clr: #31313f;
+  --login-title:#aeb6bf;
+  --frg-pass-btn-bg: #4c525d;
 }
 
 
@@ -95,6 +99,7 @@ body.dark-mode {
     gap: 15px;
     padding: 50px 40px 20px 40px;
     background-color: var(--white-bg);
+    transition: all 0.3s ease;
     box-shadow: 0px 106px 42px rgba(0, 0, 0, 0.01),
       0px 59px 36px rgba(0, 0, 0, 0.05), 0px 26px 26px rgba(0, 0, 0, 0.09),
       0px 7px 15px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
@@ -121,7 +126,7 @@ body.dark-mode {
     margin: 0;
     font-size: 1.25rem;
     font-weight: 700;
-    color: #212121;
+    color: var(--login-title);
   }
 
   .subtitle {
@@ -180,7 +185,7 @@ body.dark-mode {
     background: #115DFC;
     border-radius: 7px;
     outline: none;
-    color: #ffffff;
+    color: #fff;
     cursor: pointer;
   }
 
@@ -191,7 +196,7 @@ body.dark-mode {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: #ffffff;
+    background: var(--frg-pass-btn-bg);
     border-radius: 7px;
     outline: none;
     color: #242424;

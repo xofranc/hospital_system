@@ -7,6 +7,8 @@
   --dark-text-clr: #363b46;
   --light-text-clr: #fff;
   --hover-clr: #f1e8fd;
+  --login-title: #212121;
+  --frg-pass-input-color: ;
 }
 body.dark-mode {
   --primary-clr: #3aafe5;
@@ -15,6 +17,8 @@ body.dark-mode {
   --dark-text-clr: #fff;
   --light-text-clr: #fff;
   --hover-clr: #31313f;
+  --login-title:#aeb6bf;
+  --frg-pass-input-color: ;
 }
 
 .form-container {
@@ -32,7 +36,8 @@ body.dark-mode {
     background-color: var(--white-bg);
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--white-bg);
+    transition: all 0.3s ease;
   }
   
   .form-content {
@@ -45,14 +50,14 @@ body.dark-mode {
   .form-title {
     font-size: 1.25rem;
     font-weight: bold;
-    color: #1f2937;
+    color: var(--login-title);
     text-align: center;
   }
   
   .form-group label {
     font-size: 0.875rem;
     font-weight: medium;
-    color: #1f2937;
+    color: var(--login-title);
     margin-bottom: 0.5rem;
   }
   
