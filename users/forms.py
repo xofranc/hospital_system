@@ -1,5 +1,5 @@
 from django import forms
-from .models import Usuarios, Doctors, Paciente
+from .models import Usuarios, Doctors, Pacientes
 
 
 class Doctor_register_form(forms.Form):
@@ -35,12 +35,12 @@ class Doctor_register_form(forms.Form):
     
     def clean_identifcation_number(self):
         identification_number = self.cleaned_data.get('identification_number')
-        if Paciente.objects.filter(identification_number=identification_number).first():
+        if Doctors.objects.filter(identification_number=identification_number).first():
             raise forms.ValidationError("El número de identificación ya está registrado")
         
             
         
-class Paciente_register_form(forms.Form):
+class Pacientes_register_form(forms.Form):
     email = forms.EmailField(max_length=100)
     password = forms.CharField(widget=forms.PasswordInput, min_length=8, max_length=20)
     confirm_password = forms.CharField(widget=forms.PasswordInput, min_length=8, max_length=20)
@@ -61,13 +61,13 @@ class Paciente_register_form(forms.Form):
     
     def clean_phone_number(self):
         phone_number = self.cleaned_data.get('phone_number')
-        if Paciente.objects.filter(phone_number=phone_number).first():
+        if Pacientes.objects.filter(phone_number=phone_number).first():
             raise forms.ValidationError("El número de teléfono ya está registrado")
         return phone_number
     
     def clean_identification_number(self):
         identification_number = self.cleaned_data.get('identification_number')
-        if Paciente.objects.filter(identification_number=identification_number).first():
+        if Pacientes.objects.filter(identification_number=identification_number).first():
             raise forms.ValidationError("El número de identificación ya está registrado")
         return identification_number
     

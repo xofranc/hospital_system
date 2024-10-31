@@ -17,62 +17,62 @@
               
               <div class="form-group">
                 <label for="id_name">Nombre:</label>
-                {{ form.name }}
+                {{ form_register_paciente.name }}
                 {% comment %} <input placeholder="Nombre" id="id_name" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext"> {% endcomment %}
               </div>
 
               <div class="form-group">
-                <label for="id_last_name">Apellido:</label>
-                {{ form.last_name }}
-                <input placeholder="Apellido" id="id_last_name" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext">
-              </div>
+                <label for="id_lastName">Apellido:</label>
+                {{ form_register_paciente.lastName }}
+                {% comment %} <input placeholder="Apellido" id="id_last_name" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext">{% endcomment %}
+              </div> 
 
               <div class="form-group">
-                <label for="id_last_phone_number">Numero de telefono:</label>
-                {{ form.phone_number }}
+                <label for="id_phone_number">Numero de telefono:</label>
+                {{ form_register_paciente.phone_number }}
                 {% comment %} <input placeholder="Numero de telefono" id="id_phone_number" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext"> {% endcomment %}
               </div>
               
               <div class="form-group">
                 <label for="id_address">Direccion:</label>
-                {{ form.address }}
-                {% comment %} <input placeholder="Direcion" id="id_address" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext">
-              </div> {% endcomment %}
+                {{ form_register_paciente.address }}
+                {% comment %} <input placeholder="Direcion" id="id_address" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext">{% endcomment %}
+              </div> 
 
               <div class="form-group">
                 <label for="id_rh">RH:</label>
-                {{ form.rh }}
+                {{ form_register_paciente.rh }}
                 {% comment %} <input placeholder="Tipo de Sangre" id="id_rh" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext"> {% endcomment %}
               </div>
               
               <div class="form-group">
                 <label for="id_estado_civil">Estado Civil:</label>
-                {{ form.estado_civil }}
+                {{ form_register_paciente.estado_civil }}
                 {% comment %} <input placeholder="Estado Civil" id="id_estado_civil" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext"> {% endcomment %}
               </div>
 
               <div class="form-group">
                 <label for="id_identification_number">Numero de Cedula:</label>
-                {{ form.identification_number }}
+                {{ form_register_paciente.identification_number }}
                 {% comment %} <input placeholder="Cedula De Ciudadania" id="id_identification_number" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext"> {% endcomment %}
               </div>
 
               
               <div class="form-group">
                 <label for="id_email">Email:</label>
-                {{ form.email }}
+                {{ form_register_paciente.email }}
                 {% comment %} <input placeholder="Email" id="id_email" type="email" maxlength="254"> {% endcomment %}
               </div>
               
               <div class="form-group">
                 <label for="id_password">Contraseña:</label>
-                {{ form.password }}
+                {{ form_register_paciente.password }}
                 {% comment %} <input placeholder="••••••••" id="id_Password" type="password" required=""> {% endcomment %}
               </div>
 
               <div class="form-group">
                 <label for="id_confirm_password">Confirmar Contraseña:</label>
-                {{ form.confirm_password }}
+                {{ form_register_paciente.confirm_password }}
                 {% comment %} <input placeholder="••••••••" id="id_Password" type="password" required=""> {% endcomment %}
               </div>
               
