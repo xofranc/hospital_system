@@ -170,7 +170,7 @@ background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/s
 }
 .link-item:last-child {
   margin-top: 1px;
-  margin-bottom: 100px; /* Para empujar el último elemento hacia abajo */
+  margin-bottom: 80px; /* Para empujar el último elemento hacia abajo */
 }
 .link-item a {
   display: flex;
