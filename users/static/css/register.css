@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
 :root {
   --primary-clr: #3aafe5;
   --bg-clr: #f2f4f5;
@@ -5,6 +7,7 @@
   --dark-text-clr: #363b46;
   --light-text-clr: #fff;
   --hover-clr: #f1e8fd;
+  --title-clr: #1f2937;
 }
 body.dark-mode {
   --primary-clr: #3aafe5;
@@ -13,6 +16,7 @@ body.dark-mode {
   --dark-text-clr: #fff;
   --light-text-clr: #fff;
   --hover-clr: #31313f;
+  --title-clr: #626269;
 }
 
 
@@ -32,7 +36,8 @@ body {
   
   .form-box {
     max-width: 44rem;
-    background-color: #fff;
+    background-color: var(--white-bg);
+    transition: all 0.3s ease;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5e7eb;
@@ -47,18 +52,21 @@ body {
     flex-grow: 4;
     gap: 1rem;
   }
+
+  
   
   .form-title {
     font-size: 1.25rem;
     font-weight: bold;
-    color: #1f2937;
+    color: var(--title-clr);
+    transition: all 0.3s ease;
     text-align: center;
   }
   
   .form-group label {
     font-size: 0.875rem;
     font-weight: medium;
-    color: #1f2937;
+    color: var(--title-clr);
     margin-bottom: 0.5rem;
   }
   
