@@ -1,0 +1,153 @@
+{% comment %} visitors_nav.html {% endcomment %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Vincula el CSS de Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="{% static 'css/sliderswiper.css' %}">
+
+    <link rel="stylesheet" href= "{% static "css/styles.css" %}">
+    <link rel="stylesheet" href="{% static 'css/styles_login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/doctor_login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+    <title>{% block title %}Hospital System{% endblock %}</title>
+ </head>
+ <body>
+  <!-- contenedor principal -->
+  <div class="page">
+    <!-- barra lateral -->
+  <div class="navcontainer">
+    <!-- seccion de cabecera de slidebar con logo -->
+    <div class="logo">
+      <a href="{% url 'home' %}" class="link"> 
+
+        <svg id="logo-35" width="50" height="39" viewBox="0 0 50 39" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z" class="ccompli1" fill="#007AFF"></path> <path d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z" class="ccustom" fill="#312ECB"></path> </svg>
+   
+      </a>
+    </div>
+
+    <!-- navegacion principal -->
+<div class="nav">
+    <!-- primer menu de navegacion -->
+  <div class="menu">
+    <p class="title">Usuario</p>
+    <ul>
+    <li class="link-items">
+      <li class="link-item active">
+        <a href="{% url 'home' %}" class="link">
+          <ion-icon name="home-outline"></ion-icon>
+          <span style="--i: 1">Home</span>
+        </a>
+      </li>
+      <li class="link-item">
+        <a href="{% url 'paciente_login' %}" class="link">   
+          <ion-icon name="person-outline"></ion-icon>
+          <span style="--i: 2">Login</span>
+        </a>
+      </li>
+      <li class="link-item">
+        <a href="{% url 'paciente_register' %}" class="link">   
+          <ion-icon name="person-outline"></ion-icon>
+          <span style="--i: 2">Register</span>
+        </a>
+      </li>
+
+      </li>
+    </ul>
+    </div>
+
+      <!-- segundo menu : Admon -->
+       <div class="menu">
+        <p class="title">Doctor</p>
+        <ul>
+          <li class="link-item">
+            <a href="{% url 'doctor_login'%}" class="link">
+              <ion-icon name="people-outline"></ion-icon>
+              <span style="--i: 2">Login</span>
+            </a>
+          </li>
+
+{% comment %}  
+
+      <li class="link-item">
+
+        <a href="#" class="link">
+          <ion-icon name="documents-outline"></ion-icon>
+          <span style="--i: 7">Recetas</span>
+          <i class="arrow ph-bold ph-caret-down"></i>
+        </a>
+        <!-- submenu de doctor -->
+        <ul class="sub-menu">
+          <li><a href="#"><span class="text">Crear</span></a></li>
+          <li><a href="#"><span class="text">Listar</span></a></li>
+          <li><a href="#"><span class="text">Descargar</span></a></li>
+        </ul>
+      </li>
+
+{% endcomment %}
+
+      </ul>
+    </div>
+
+
+
+  <!-- tercer menu : Config -->
+  <div class="menu">
+    <p class="title">Config</p>
+    <ul>
+      <li class="link-item dark-mode">
+        <a href="#" class="link">
+          <ion-icon name="moon-outline"></ion-icon>
+          <span style="--i: 8">dark mode</span>
+        </a>
+      </li>
+      <li class="link-item">
+        <a href="#" class="link">
+          <img src="{% static 'img/unknown-user.jpg' %}" alt="" />
+          <span style="--i: 9">
+            <h4>ComingSoon</h4>
+            <p>© SGIH</p>
+          </span>
+        </a>
+      </li>
+    </ul>
+    </div>
+
+    {% comment %} cierra div nav {% endcomment %}
+  </div>
+
+  {% comment %} cierra div navcontainer {% endcomment %}
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script src="{% static 'js/scripts.js' %}"></script>
+
+  <!-- Vincula el JavaScript de Swiper -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="{% static 'js/swiper.js' %}"></script>
+
+        <div class="main-content">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+
+        {% comment %} cierra div page {% endcomment %}
+    </div>
+
+
+</body>
+</html>
