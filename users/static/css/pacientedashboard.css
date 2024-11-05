@@ -74,13 +74,14 @@
 /*Contenido Cuadrados */
 
 .up .title {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     font-weight: 600;
     margin: 1rem;
 }
 
 .up .N {
-    font-size: 3.2rem;
+    margin-top: 1rem;
+    font-size: 1rem;
     font-weight: 500;
     margin-left: 1rem;
 }
@@ -133,7 +134,7 @@
 }
 
 .doc-asig {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-evenly;
     border-radius: 10px;
@@ -166,6 +167,7 @@
 
 .calendar p {
     text-align: left;
+    margin-bottom: 20px;
 }
 
 .calendar h4 {
@@ -224,6 +226,7 @@
 /*proximo*/
 
 .upcoming {
+    margin-top: 40px;
     padding: 5px;
     display: flex;
     justify-content: space-between;
@@ -353,16 +356,9 @@
 }
 
 .infopacientes-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border-radius: 10px;
-    gap: 5px;
     width: 100%;
-    height: 100%;
-    /* border: solid 1px #c0daea; */
-    margin-left: 8px;
-    
+    height: 50%;
+    margin-top: 20px;
 }
 
 .info-paciente {
@@ -373,6 +369,86 @@
 .info-paciente img {
     margin: 10px; 
 }
+
+.parent-data-user {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 8px;
+    width: 30%;
+    height: 30%;
+    
+}
+    
+.div-imagen {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    display: grid;
+    justify-content: center;
+    width: 70%;
+    height: 50%;
+}
+
+.div-imagen img {
+    margin-left: 20%;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.div-altura {
+    grid-column-start: 1;
+    grid-row-start: 3;
+    
+}
+
+.div-sangre {
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+
+.div-edad {
+    grid-column-start: 1;
+    grid-row-start: 4;
+}
+
+.div-genero {
+    grid-column-start: 2;
+    grid-row-start: 4;
+    width: 100%;
+    height: 60px;
+}
+
+.div-nombre {
+    grid-column: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 1;
+    
+    width: 2500%;
+    height: 60px;
+}
+
+.div-cedula {
+    grid-column: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 2;
+    width: 2500%;
+    height: 60px;
+}
+
+.div-telefono {
+    grid-column: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 3;
+    width: 2500%;
+    height: 60px;
+}
+
+
+.div-altura, .div-sangre, .div-edad, .div-genero, .div-nombre, .div-cedula, .div-telefono, .div-imagen {
+    text-align: center;
+}
+        
 
 
 
@@ -443,9 +519,12 @@
 }
 
 .info-historia {
-    
     align-items: center;
     display: flex;
+}
+
+.info-historia img {
+    margin-right: 10px; 
 }
 
 
