@@ -1,0 +1,145 @@
+<!-- templates/logins/register.html -->
+{% extends 'sidebar.html' %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block content %}
+<body>
+  {% comment %} <div class="register-paciente-container">
+    <form action="{% url 'doctor_register' %}"method="POST">
+        {% csrf_token %}
+        <div class="form-container">
+          <div class="form-box">
+            <div class="form-content">
+              <p class="form-title">Registro Doctores</p>
+              
+              <div class="form-group">
+                <label for="username">Nombre</label>
+                <input placeholder="Usuario" id="username" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext">
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input placeholder="Email" id="id_email" type="email" maxlength="254">
+              </div>
+              
+              <div class="form-group">
+                <label for="contraseña">Contraseña</label>
+                <input placeholder="••••••••" id="id_Password" type="password" required="">
+              </div>
+              
+              <div class="terms-container">
+                <input type="checkbox" id="terms">
+                <label for="terms">Acepto los <a href="#">Terminos y Condiciones</a></label>
+              </div>
+      
+              <button class="register "type="submit">Registrarse</button>
+            </div>
+            <div class="separator">
+                <hr class="line">
+                <span>...</span>
+                <hr class="line">
+            </div>
+            <div class="nota">
+            <p class="note">Ya tienes una cuenta? <a href="{% url 'paciente_login' %}">Inicia sesión aquí</a>
+            </div>
+        </div>
+        
+    </div>
+  </form>
+</div> {% endcomment %}
+
+<div class="register-paciente-container">
+  <form action="{% url 'doctor_register' %}" method="POST">
+      {% csrf_token %}
+      <div class="form-container">
+        <div class="form-box">
+          <div class="form-content">
+            <p class="form-title">Registro Doctores</p>
+            
+            <div class="form-group">
+              <label for="id_name">Nombre:</label>
+              {{ form_register_doctor.name }}
+              {% comment %} <input placeholder="Nombre" id="id_name" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext"> {% endcomment %}
+            </div>
+
+            <div class="form-group">
+              <label for="id_last_name">Apellido:</label>
+              {{ form_register_doctor.lastName }}
+              {% comment %} <input placeholder="Apellido" id="id_lastName" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext"> {% endcomment %}
+            </div>
+
+            <div class="form-group">
+              <label for="id_phone_number">Numero de telefono:</label>
+              {{ form_register_doctor.phone_number }}
+              {% comment %} <input placeholder="Numero de telefono" id="id_phone_number" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext"> {% endcomment %}
+            </div>
+            
+            <div class="form-group">
+              <label for="id_address">Direccion:</label>
+              {{ form_register_doctor.address }}
+              {% comment %} <input placeholder="Direcion" id="id_address" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext">
+            </div> {% endcomment %}
+
+            <div class="form-group">
+              <label for="id_speciality">Especialidad:</label>
+              {{ form_register_doctor.speciality }}
+              {% comment %} <input placeholder="Tipo de Sangre" id="id_rh" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext"> {% endcomment %}
+            </div>
+            
+            <div class="form-group">
+              <label for="id_licence_number">Numero de Licencia:</label>
+              {{ form_register_doctor.licence_number }}
+              {% comment %} <input placeholder="Estado Civil" id="id_estado_civil" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext"> {% endcomment %}
+            </div>
+
+            <div class="form-group">
+              <label for="id_identification_number">Numero de Cedula:</label>
+              {{ form_register_doctor.identification_number }}
+              {% comment %} <input placeholder="Cedula De Ciudadania" id="id_identification_number" type="text"  maxlength="150" required="" aria-describedby="id_username_helptext"> {% endcomment %}
+            </div>
+
+            
+            <div class="form-group">
+              <label for="id_email">Email:</label>
+              {{ form_register_doctor.email }}
+              {% comment %} <input placeholder="Email" id="id_email" type="email" maxlength="254"> {% endcomment %}
+            </div>
+            
+            <div class="form-group">
+              <label for="id_password">Contraseña:</label>
+              {{ form_register_doctor.password }}
+              {% comment %} <input placeholder="••••••••" id="id_Password" type="password" required=""> {% endcomment %}
+            </div>
+
+            <div class="form-group">
+              <label for="id_confirm_password">Confirmar Contraseña:</label>
+              {{ form_register_doctor.confirm_password }}
+              {% comment %} <input placeholder="••••••••" id="id_Password" type="password" required=""> {% endcomment %}
+            </div>
+            
+            <div class="terms-container">
+              <input type="checkbox" id="terms">
+              <label for="terms">Acepto los <a href="#">Terminos y Condiciones</a></label>
+            </div>
+    
+            <button class="register "type="submit">Registrarse</button>
+          </div>
+          <div class="separator">
+              <hr class="line">
+              <span>...</span>
+              <hr class="line">
+          </div>
+          <div class="nota">
+          <p class="note">Ya tienes una cuenta? <a href="{% url 'paciente_login' %}">Inicia sesión aquí</a>
+          </div>
+      </div>
+      
+  </div>
+</form>
+</div>
+</body>
+</html>
+{% endblock %}

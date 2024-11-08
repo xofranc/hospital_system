@@ -1,0 +1,120 @@
+
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+  }
+  
+  .form-box {
+    width: 100%;
+    max-width: 24rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+  }
+  
+  .form-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .form-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1f2937;
+    text-align: center;
+  }
+  
+  .form-group label {
+    font-size: 0.875rem;
+    font-weight: medium;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.625rem;
+    font-size: 0.875rem;
+    color: #1f2937;
+    background-color: #f9fafb;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+  }
+  
+  .terms-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+  
+  .terms-container input {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .terms-container a {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+  
+  .register {
+    width: 100%;
+    padding: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: medium;
+    color: #fff;
+    background-color: #3b82f6;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .register:hover {
+    background-color: #2563eb;
+  }
+  
+
+  .separator {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: #8B8E98;
+  }
+
+  .separator .line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    border: 0;
+    background-color: #e8e8e8;
+  }
+  
+.note {
+    margin: 5px;
+    font-size: 0.75rem;
+    color: #8B8E98;
+    text-decoration: none;
+    text-align: center; 
+}
+
+.register-paciente-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+  
