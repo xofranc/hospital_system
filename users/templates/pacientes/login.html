@@ -33,7 +33,7 @@
             <ion-icon name="keypad-outline" class="icon"></ion-icon>
             <input type="password" name="password" class="input_field" id="password" placeholder="Contraseña" required> 
         </div>  {% endcomment %}
-        {{form_paciente}}
+        {{form_paciente.as_p}}
 
         
         
@@ -55,9 +55,9 @@
         <p class="note">Terminos de uso &amp; Condiciones</p>
 
 
-     <p class="note">No tienes una Cuenta?<a href="{% url 'paciente_register' %}">Registrate aquí</a></p>
-    <p class="note">Eres Doctor? <a href="{% url 'doctor_login' %}">Inicia Sesion Aqui!</a></p>     
-</form>
+        <p class="note">No tienes una Cuenta?<a href="{% url 'paciente_register' %}">Registrate aquí</a></p>
+        <p class="note">Eres Doctor? <a href="{% url 'doctor_login' %}">Inicia Sesion Aqui!</a></p>     
+    </form>
 </div>
 </body>
 {% endblock %}
