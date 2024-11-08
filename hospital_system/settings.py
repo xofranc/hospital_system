@@ -90,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hospital',  # Cambia esto por el nombre de tu base de datos
         'USER': 'root',             # Tu usuario de MySQL
-        'PASSWORD': '1003540355',      # Tu contraseña de MySQL
+        'PASSWORD': '12345678',      # Tu contraseña de MySQL
         'HOST': 'localhost',                     # O el host que estés utilizando
         'PORT': '3306',                          # El puerto por defecto de MySQL
     }
