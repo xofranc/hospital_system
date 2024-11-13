@@ -16,7 +16,7 @@ body.dark-mode {
   --dark-text-clr: #fff;
   --light-text-clr: #fff;
   --hover-clr: #31313f;
-  --title-clr: #48484e;
+  --title-clr: #fefefe;
 }
 
 .form_container {

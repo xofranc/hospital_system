@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Vincula el CSS de Swiper -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="{% static 'css/sliderswiper.css' %}">
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{% static 'css/styles_login.css' %}">
     <link rel="stylesheet" href="{% static 'css/doctor_login.css' %}">
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    
 
     <title>{% block title %}Hospital System{% endblock %}</title>
  </head>
@@ -138,6 +139,8 @@
   <!-- Vincula el JavaScript de Swiper -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="{% static 'js/swiper.js' %}"></script>
+
+
 
         <div class="main-content">
             {% block content %}
