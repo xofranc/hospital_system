@@ -181,7 +181,7 @@
       width: 30%;
       height: 70%;
       border-radius: 20px;
-      background-color: #e0f2fe; /*borrar*/
+      background-color: #e0f2fe;
       padding: 20px;
       display: flex;
       flex-wrap: nowrap;
@@ -196,7 +196,7 @@
       width: 30%;
       height: 70%;
       border-radius: 20px;
-      background-color: #fffbeb; /*borrar*/
+      background-color: #fffbeb;
       padding: 20px;
       display: flex;
       flex-wrap: nowrap;

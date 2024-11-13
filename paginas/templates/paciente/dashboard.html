@@ -1,13 +1,261 @@
-{%extends 'sidebar.html' %}
+{% extends "sidebar.html" %}
 {% load static %}
 
 
-{% block title %}Paciente{% endblock %}
-
 {% block content %}
 
+<link rel="stylesheet" href="{% static 'css/pacientedashboard.css' %}">
+
+<div class="dashboard">
+    <section class="nav-dashboard-doctor">
+
+        <div class="logo-dashboard">
+            <img src="{% static 'img/SGIH.svg' %}" alt="">
+        </div>
+
+        <div class="user-info-nav">
+
+            <div class="search">
+                <a href="#">
+                    <ion-icon name="search-outline"></ion-icon>
+                </a>
+            </div>
+            <div class="notifications">
+                <a href="#">
+                    <ion-icon name="notifications-outline"></ion-i>
+                </a>
+            </div>
+
+            <div class="user">
+                <div class="name-patient-user">
+                    <p class="name-doctor">Camilo P.</p>
+                    <p >Paciente</p>
+                </div>
+                <div class="img-user">
+                    <img src="{% static 'img/unknown-user.jpg' %}" alt="">
+                </div>
+                <div class="arrow">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                </div>
+            </div>
+
+            
+
+        </div>
+
+    </section>
 
 
+    <section class="dashboard-content">
+        <div class="important-info">
+            <div class="important-info-p1">
+                <!-- tres divs iguales, cambiar mas adelante -->
+                <div class="visitas-diarias">
+                    <div class="visitas-diarias-content">
+                        <p>Buenos Dias!</p>
+                        <p>-Luis P. M.</p>
+                        <p>-</p>
+                    </div>
+                    <div class="visitas-diarias-logo">
+                        <div class="visitas-diarias-logo-content">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="visitas-diarias-middle">
+                    <div class="visitas-diarias-content">
+                            <p>...</p>
+                            <p>-...</p>
+                            <p>-...</p>
+                        </div>
+                        <div class="visitas-diarias-logo">
+                            <div class="visitas-diarias-logo-content">
+                                <ion-icon name="accessibility-outline"></ion-icon>
+                            </div>
+                        </div>
+                </div>
+                <div class="visitas-diarias">
+                    <div class="visitas-diarias-content">
+                            <p>Historia Clinica</p>
+                            <a href="#">-Descargar Historia Clinica</a>
+                            <a href="#">-Revisar Historia Clinica</a>
+                        </div>
+                        <div class="visitas-diarias-logo">
+                            <div class="visitas-diarias-logo-content">
+                                <ion-icon name="add-outline"></ion-icon>
+                            </div>
+                        </div>
+                </div>
+                <!-- tres divs iguales, cambiar mas adelante -->
+            </div>
+            <div class="important-info-p2">
+                <div class="actividad-semanal-title">
+                    <h4>Actividad Semanal</h4>
+                </div>
+                <div class="actividad-semanal">
+                    <div class="item">
+                        <canvas class="activity-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="pacientes">
+                <div class="header-pacientes">
 
-{% endblock%}
+                    <div class="header">
+                        <h4>Progreso Medico</h4>
+                        <div class="tabs">
+                            <a href="#" class="active">1Y</a>
+                            <a href="#">6M</a>
+                            <a href="#">3M</a>
+                        </div>
+                    </div>
 
+
+                   
+                    
+                </div>
+                <div class="pacientes-content">      
+            
+                <div class="details">
+                    <div class="item">
+                        <h2>3.45</h2>
+                        <p>Current GPA</p>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="item">
+                        <h2>4.78</h2>
+                        <p>Medical Average GPA</p>
+                    </div>
+                </div>
+    
+                <canvas class="prog-chart"></canvas>
+
+                </div>
+            </div>
+            <div class="historias">
+                <div class="header">
+                    <h4>Recomendaciones</h4>
+                    <a href="#"># Mas</a>
+                </div>
+                <div class="historias-content">
+
+                  <div class="imagen-recomendaciones">
+                    <img src="{% static 'img/podcast.jpg' %}">
+                  </div>
+
+            <div class="audio">
+                <i class='bx bx-podcast'></i>
+                <a href="#">Cuidado de la salud en casa</a>
+            </div>
+            <p>Aprende a mantenerte sano y limpio desde pequeño</p>
+            <div class="listen">
+                <div class="author">
+                    <img src="{% static 'img/profile.png' %}">
+                    <div>
+                        <a href="#">Alex</a>
+                        <p>Medico Especialista</p>
+                    </div>
+                </div>
+                <button>Escucha<i class='bx bx-right-arrow-alt'></i></button>
+            </div>
+
+                    
+                    
+
+                </div>
+            </div>
+            <div class="calendario">
+
+                <div class="header">
+                    <h4>Calendario</h4>
+                    <a href="#">Noviembre <i class='bx bx-chevron-down'></i></a>
+                </div>
+    
+                <div class="dates">
+                    <div class="item">
+                        <h5>Mo</h5>
+                        <a href="#">11</a>
+                    </div>
+                    <div class="item">
+                        <h5>Tu</h5>
+                        <a href="#">12</a>
+                    </div>
+                    <div class="item active">
+                        <h5>We</h5>
+                        <a href="#">13</a>
+                    </div>
+                    <div class="item">
+                        <h5>Th</h5>
+                        <a href="#">14</a>
+                    </div>
+                    <div class="item">
+                        <h5>Fr</h5>
+                        <a href="#">15</a>
+                    </div>
+                    <div class="item">
+                        <h5>Sa</h5>
+                        <a href="#">16</a>
+                    </div>
+                    <div class="item">
+                        <h5>Su</h5>
+                        <a href="#">17</a>
+                    </div>
+                </div>
+    
+                <div class="events">
+                    <div class="item">
+                        <div>
+                            <i class='bx bx-time'></i>
+                            <div class="event-info">
+                                <a href="#">Medico General</a>
+                                <p>10:00-11:30</p>
+                            </div>
+                        </div>
+                        <i class='bx bx-dots-horizontal-rounded'></i>
+                    </div>
+                    <div class="item">
+                        <div>
+                            <i class='bx bx-time'></i>
+                            <div class="event-info">
+                                <a href="#">Radiografia</a>
+                                <p>13:30-15:00</p>
+                            </div>
+                        </div>
+                        <i class='bx bx-dots-horizontal-rounded'></i>
+                    </div>
+                    <div class="item">
+                        <div>
+                            <i class='bx bx-time'></i>
+                            <div class="event-info">
+                                <a href="#">Laboratorio Medico</a>
+                                <p>11:30-13:00</p>
+                            </div>
+                        </div>
+                        <i class='bx bx-dots-horizontal-rounded'></i>
+                    </div>
+                    
+                </div>
+    
+
+
+                <!-- <div class="header-calendario">
+
+                </div>
+                <div class="calendario-content">
+
+                </div> -->
+            </div>
+        </div>
+    </section>        
+</div>
+
+
+<script  type ="module"  src ="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"> </script> 
+<script  nomodule  src ="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"> </script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
+
+
+{% endblock %}
