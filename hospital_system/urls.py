@@ -25,5 +25,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('users.urls')),
     path('paginas/', include('paginas.urls')),
-    
+    path('historial/', include('historial.urls')),
 ]
