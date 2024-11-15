@@ -1,4 +1,4 @@
-  // Código 3: Slider con Swiper
+  // codigo de funcinamiento del swiper que muestra la imagen en la pagina inicial, automaticamente
   var swiper = new Swiper(".listSlider", {
     slidesPerView: 1,
     loop: true,
