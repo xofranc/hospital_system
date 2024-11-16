@@ -8,6 +8,9 @@
   --light-text-clr: #fff;
   --hover-clr: #f1e8fd;
   --title-clr: #1f2937;
+  --secondary-txt-clr: #1f2937;
+  --input-bg:#f9fafb;
+  --input-text:#1f2937;
 }
 body.dark-mode {
   --primary-clr: #3aafe5;
@@ -16,7 +19,10 @@ body.dark-mode {
   --dark-text-clr: #fff;
   --light-text-clr: #fff;
   --hover-clr: #31313f;
-  --title-clr: #626269;
+  --title-clr: #adadad;
+  --secondary-txt-clr: #f1f1f1;
+  --input-bg: #1e1e1e; 
+  --input-text:#f1f1f1;
 }
 
 
@@ -26,16 +32,18 @@ body.dark-mode {
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
-body {
+/* body {
   min-height: 100vh;
-}
+} */
 
 .form-container {
-    padding: 2rem 1.5rem;
+  width: 100%;
+  height: fit-content;
+  padding: 2rem 1.5rem;
   }
   
   .form-box {
-    max-width: 44rem;
+    max-width: 84rem;
     background-color: var(--white-bg);
     transition: all 0.3s ease;
     border-radius: 0.5rem;
@@ -51,10 +59,38 @@ body {
     flex-direction: column;
     flex-grow: 4;
     gap: 1rem;
+
+    
   }
 
-  
-  
+.all-forms {
+  display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: normal;
+    align-content: normal;
+}
+
+  .left {
+    margin-right: 20px;
+    display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  }
+
+  .right {
+    display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  }
+
   .form-title {
     font-size: 1.25rem;
     font-weight: bold;
@@ -66,16 +102,18 @@ body {
   .form-group label {
     font-size: 0.875rem;
     font-weight: medium;
-    color: var(--title-clr);
+    color: var(--secondary-txt-clr);
+    transition: all 0.3s ease;
     margin-bottom: 0.5rem;
   }
   
   .form-group input {
-    width: 50%;
+    width: 100%;
     padding: 0.625rem;
     font-size: 0.875rem;
-    color: #1f2937;
-    background-color: #f9fafb;
+    color: var(--input-text);
+    background-color: var(--input-bg);
+    transition: all 0.3s ease;
     border: 1px solid #d1d5db;
     border-radius: 0.5rem;
   }
@@ -124,6 +162,10 @@ body {
 }
 
 .register-paciente-container {
+  width: 55%;
+  height: fit-content;
+
+
   position: absolute;
   top: 50%;
   left: 50%;

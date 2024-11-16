@@ -8,6 +8,8 @@
   --light-text-clr: #fff;
   --hover-clr: #f1e8fd;
   --title-clr: #212121;
+  --input-bg:#f1f1f1;
+  --input-txt-color:#000;
 }
 body.dark-mode {
   --primary-clr: #3aafe5;
@@ -17,6 +19,8 @@ body.dark-mode {
   --light-text-clr: #fff;
   --hover-clr: #31313f;
   --title-clr: #fefefe;
+  --input-bg:#b0b0b0;
+  --input-txt-color:#f9f9f9;
 }
 
 
@@ -144,7 +148,34 @@ body.dark-mode {
     gap: 5px;
   }
 
+  .input_container label {
+    font-size: 0.8rem;
+    color: #8B8E98;
+    font-weight: 600;
+  }
+
+  .input_container input {
+    width: 100%;
+    height: 40px;
+    padding: 0 0 0 40px;
+    border-radius: 7px;
+    outline: none;
+    text-decoration: none;
+    color: var(--input-txt-color);
+    background-color: var(--input-bg);
+    border: 1px solid #e5e5e5;
+    
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+  }
+
+  .input_container input:focus {
+    border: 1px solid transparent;
+    
+    background-color: transparent;
+  }
+
   .icon {
+    color: #8B8E98;
     width: 20px;
     position: absolute;
     z-index: 99;
@@ -165,14 +196,12 @@ body.dark-mode {
     border-radius: 7px;
     outline: none;
     border: 1px solid #e5e5e5;
-    filter: drop-shadow(0px 1px 0px #efefef)
-      drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
     transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
   }
 
   .input_field:focus {
     border: 1px solid transparent;
-    box-shadow: 0px 0px 0px 2px #242424;
+    
     background-color: transparent;
   }
 
@@ -194,11 +223,11 @@ body.dark-mode {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: #ffffff;
+    
     border-radius: 7px;
     outline: none;
-    color: #242424;
-    border: 1px solid #e5e5e5;
+    
+    
     filter: drop-shadow(0px 1px 0px #efefef)
       drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
     cursor: pointer;
