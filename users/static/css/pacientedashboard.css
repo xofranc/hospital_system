@@ -46,7 +46,7 @@
       justify-content: space-between;
       align-items: center;
       align-content: flex-start;
-      /*adaptar tamaño al agregar al proyecto*/
+    
       width: 90%;
       height: 90vh;
       flex-direction: column;
@@ -243,9 +243,6 @@
   .important-info-p2 {
       width: 30%;
       height: 100%;
-  
-      
-  
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around; /*----------*/
@@ -269,8 +266,6 @@
       width: 100%;
       height: 70%;
       border-radius: 0 0 50px 0;
-  
-      
   }
   
   .content {
@@ -311,16 +306,7 @@
       justify-content: space-between;
       
   }
-  
-  /* .header-pacientes-title {
-      width: 50%;
-      height: 100%;
-      display: grid;
-      place-content: center;
-      font-size: 0.8rem;
-      font-weight: 600;
-      font-family: "Roboto", sans-serif;
-  } */
+
   
   .header-pacientes h4 {
       font-weight: 700;
@@ -354,39 +340,6 @@
   .pacientes .header .tabs a.active{
       background: #fff;
   }
-  
-  /* .pacientes-y-m-m {
-      width: 30%;
-      height: 25px;
-      background-color: var(--bg-color);
-      border-radius: 20px;
-  
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: center;
-      align-content: center;
-      flex-direction: row;
-  }
-  
-  
-  .ONEY{
-      height: 20px;
-      width: 45px;
-      background-color: var(--container-clr);
-      border-radius: 10px;
-      text-align: center;
-  }
-  
-  .ONEY, .SIXM, .THREEM {
-      font-family: "Roboto", sans-serif;
-      font-size: small;
-  } */
-  
-  /* .SIXM, .THREEM {
-  
-  } */
-  
   
   .pacientes-content {
       width: 100%;
@@ -465,9 +418,6 @@
       background: #f3f3f3;
       border-radius: 20px;
   }
-  
-  
-  
   
   /*CALENDARIO*/
   
@@ -568,8 +518,6 @@
       font-size: 13px;
       color: #9b9b9b;
   }
-  
-  
 
   /*progreso medico*/
 
@@ -594,9 +542,6 @@
     height: 70px;
     background: #f3f3f3;
 }
-
-
-
   /*recomendaciones*/
 
 .historias-content .imagen-recomendaciones{
