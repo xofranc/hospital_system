@@ -1,6 +1,6 @@
-{% comment %} contenedor y contenido del dashboard del doctor {% endcomment %}
 
-{% extends "sidebar.html" %}
+
+{% extends "pacientesidebar.html" %}
 {% load static %}
 
 
@@ -50,41 +50,44 @@
         <div class="important-info">
             <div class="important-info-p1">
                 <!-- tres divs iguales, cambiar mas adelante -->
-                <div class="visitas-diarias">
-                    <div class="visitas-diarias-content">
-                        <p>Buenos Dias!</p>
-                        <p>-Luis P. M.</p>
-                        <p>-</p>
-                    </div>
-                    <div class="visitas-diarias-logo">
-                        <div class="visitas-diarias-logo-content">
-                            <ion-icon name="people-outline"></ion-icon>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Buenos Dias!</h5>
+                            <p>- Camilo P.</p>
+                            <p>- ...</p>
                         </div>
+                        <ion-icon name="aperture-outline"></ion-icon>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
                     </div>
                 </div>
-                <div class="visitas-diarias-middle">
-                    <div class="visitas-diarias-content">
-                            <p>...</p>
-                            <p>-...</p>
-                            <p>-...</p>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Medicamentos</h5>
+                            <p>- ...</p>
+                            <p>- ...</p>
                         </div>
-                        <div class="visitas-diarias-logo">
-                            <div class="visitas-diarias-logo-content">
-                                <ion-icon name="accessibility-outline"></ion-icon>
-                            </div>
-                        </div>
+                        <ion-icon name="briefcase-outline"></ion-icon>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
                 </div>
-                <div class="visitas-diarias">
-                    <div class="visitas-diarias-content">
-                            <p>Historia Clinica</p>
-                            <a href="#">-Descargar Historia Clinica</a>
-                            <a href="#">-Revisar Historia Clinica</a>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Informacion Medica</h5>
+                            <p>- ...</p>
+                            <p>- ...</p>
                         </div>
-                        <div class="visitas-diarias-logo">
-                            <div class="visitas-diarias-logo-content">
-                                <ion-icon name="add-outline"></ion-icon>
-                            </div>
-                        </div>
+                        <ion-icon name="earth-outline"></ion-icon>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
                 </div>
                 <!-- tres divs iguales, cambiar mas adelante -->
             </div>
@@ -139,14 +142,14 @@
                 <div class="historias-content">
 
                   <div class="imagen-recomendaciones">
-                    <img src="{% static 'img/podcast.jpg' %}">
+                    <img src="{% static 'img/podcast2.1.jpg' %}">
                   </div>
 
             <div class="audio">
                 <i class='bx bx-podcast'></i>
                 <a href="#">Cuidado de la salud en casa</a>
             </div>
-            <p>Aprende a mantenerte sano y limpio desde pequeño</p>
+            <p>Aprende a mantenerte sano y limpio</p>
             <div class="listen">
                 <div class="author">
                     <img src="{% static 'img/profile.png' %}">

@@ -1,4 +1,4 @@
-{% extends "sidebar.html" %}
+{% extends "doctorsidebar.html" %}
 {% load static %}
 
 
@@ -47,42 +47,46 @@
         <div class="important-info">
             <div class="important-info-p1">
                 <!-- tres divs iguales, cambiar mas adelante -->
-                <div class="visitas-diarias">
-                    <div class="visitas-diarias-content">
-                        <p>Visitas Hoy!</p>
-                        <p>-Nuevos Pacientes</p>
-                        <p>-Pacientes de alta</p>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Visitas Hoy!</h5>
+                            <p>- Nuevos Pacientes</p>
+                            <p>- Pacientes de alta</p>
+                        </div>
+                        <ion-icon name="swap-vertical-outline"></ion-icon>
                     </div>
-                    <div class="visitas-diarias-logo">
-                        <div class="visitas-diarias-logo-content">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </div>
+                    <div class="progress">
+                        <div class="bar"></div>
                     </div>
                 </div>
-                <div class="visitas-diarias-middle">
-                    <div class="visitas-diarias-content">
-                            <p>Tareas</p>
-                            <p>-...</p>
-                            <p>-...</p>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Tareas</h5>
+                            <p>- ...</p>
+                            <p>- ...</p>
                         </div>
-                        <div class="visitas-diarias-logo">
-                            <div class="visitas-diarias-logo-content">
-                                <ion-icon name="accessibility-outline"></ion-icon>
-                            </div>
-                        </div>
+                        <i class='bx bx-data'></i>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
                 </div>
-                <div class="visitas-diarias">
-                    <div class="visitas-diarias-content">
-                            <p>Reporte Semanal</p>
-                            <p>-...</p>
-                            <p>-...</p>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Reporte Semanal</h5>
+                            <p>- ...</p>
+                            <p>- ...</p>
                         </div>
-                        <div class="visitas-diarias-logo">
-                            <div class="visitas-diarias-logo-content">
-                                <ion-icon name="add-outline"></ion-icon>
-                            </div>
-                        </div>
+                        <ion-icon name="receipt-outline"></ion-icon>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
                 </div>
+                
                 <!-- tres divs iguales, cambiar mas adelante -->
             </div>
             <div class="important-info-p2">
@@ -115,10 +119,10 @@
                     <div class="persona-contenedor">
                         <img src="https://via.placeholder.com/100" alt="Foto de Persona 1" class="foto">
                         <div class="info">
-                            <h3>Juan Pérez</h3>
+                            <h4>Juan Pérez</h4>
                             <p>Edad: 29</p>
                             <p>Género: Masculino</p>
-                            <p>Cédula: 12345678</p>
+                            <p>Cédula: 1234567812</p>
                         </div>
                     </div>
                 
@@ -126,7 +130,7 @@
                     <div class="persona-contenedor">
                         <img src="https://via.placeholder.com/100" alt="Foto de Persona 2" class="foto">
                         <div class="info">
-                            <h3>María González</h3>
+                            <h4>María González</h4>
                             <p>Edad: 34</p>
                             <p>Género: Femenino</p>
                             <p>Cédula: 87654321</p>
@@ -137,7 +141,7 @@
                     <div class="persona-contenedor">
                         <img src="https://via.placeholder.com/100" alt="Foto de Persona 3" class="foto">
                         <div class="info">
-                            <h3>Carlos Martínez</h3>
+                            <h4>Carlos Martínez</h4>
                             <p>Edad: 42</p>
                             <p>Género: Masculino</p>
                             <p>Cédula: 45612378</p>
@@ -148,10 +152,10 @@
                     <div class="persona-contenedor">
                         <img src="https://via.placeholder.com/100" alt="Foto de Persona 4" class="foto">
                         <div class="info">
-                            <h3>Lucía Ramírez</h3>
+                            <h4>Lucía Ramírez</h4>
                             <p>Edad: 27</p>
                             <p>Género: Femenino</p>
-                            <p>Cédula: 78945612</p>
+                            <p>Cédula: 7894561212</p>
                         </div>
                     </div>
                 </div>
@@ -167,8 +171,8 @@
                     <div class="persona-contenedor">
                         <img src="https://via.placeholder.com/100" alt="Foto de Persona 1" class="foto">
                         <div class="info">
-                            <h3>Juan Pérez M.  </h3>
-                            <p>Cédula: 12345678</p>
+                            <h4>Juan Pérez M.  </h4>
+                            <p>Cédula: 1234567812</p>
                         </div>
                     </div>
                 
@@ -176,7 +180,7 @@
                     <div class="persona-contenedor">
                         <img src="https://via.placeholder.com/100" alt="Foto de Persona 2" class="foto">
                         <div class="info">
-                            <h3>María González</h3>
+                            <h4>María González</h4>
                             <p>Cédula: 87654321</p>
                         </div>
                     </div>
@@ -185,7 +189,7 @@
                     <div class="persona-contenedor">
                         <img src="https://via.placeholder.com/100" alt="Foto de Persona 3" class="foto">
                         <div class="info">
-                            <h3>Carlos Martínez</h3>
+                            <h4>Carlos Martínez</h4>
                             <p>Cédula: 45612378</p>
                         </div>
                     </div>
@@ -194,8 +198,8 @@
                     <div class="persona-contenedor">
                         <img src="https://via.placeholder.com/100" alt="Foto de Persona 4" class="foto">
                         <div class="info">
-                            <h3>Lucía Ramírez</h3>
-                            <p>Cédula: 78945612</p>
+                            <h4>Lucía Ramírez</h4>
+                            <p>Cédula: 7894561212</p>
                         </div>
                     </div>
 

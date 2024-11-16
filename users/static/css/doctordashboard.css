@@ -16,6 +16,8 @@
     --bg-color:#d4d4d4;
     --container-clr:#fff;
     --dashborar-clr: #0e2a4f;
+    --person-bg-clr:#f9f9f9;
+    --persona-txt-clr:#000;
   }
   body.dark-mode {
     --primary-clr: #3aafe5;
@@ -24,7 +26,8 @@
     --dark-text-clr: #fff;
     --light-text-clr: #fff;
     --hover-clr: #31313f;
-    
+    --container-clr:#bababa;
+    --person-bg-clr:#bababa;
   }
   
   *{
@@ -173,6 +176,124 @@
       align-content: flex-start;
       flex-direction: row;
   }
+
+
+  /**/
+
+   .important-info-p1{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+ .important-info-p1 .item{
+    background: #e0f2fe;
+    width: 35%;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 18px;
+}
+
+.important-info-p1 .item p {
+    color: #000;
+}
+
+ .important-info-p1 .item:nth-child(2){
+    background: #fffbeb;
+}
+
+ .important-info-p1 .item:nth-child(3){
+    background: #bfdbfe;
+}
+
+ .important-info-p1 .item:nth-child(4){
+    background: #031224;
+    padding: 10px;
+}
+
+
+.important-info-p1 .item .info{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.important-info-p1 .item .info h5{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.important-info-p1 .item .info p{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.important-info-p1 .item .info > i{
+    font-size: 20px;
+    padding: 10px;
+    background: #031224;
+    color: #f1f3f2;
+    border-radius: 50%;
+}
+.important-info-p1 .item .info > ion-icon{
+    font-size: 20px;
+    padding: 10px;
+    background: #031224;
+    color: #f1f3f2;
+    border-radius: 50%;
+}
+
+.important-info-p1 .item .progress{
+    position: relative;
+    height: 10px;
+    background: #b7c0cd;
+    border-radius: 10px;
+}
+
+.important-info-p1 .item .progress .bar{
+    width: 92%; /*progreso de la barra*/
+    height: 10px;
+    background: #031224;
+    border-radius: 10px;
+}
+
+.important-info-p1 .item .progress::before{
+    content: "92%"; /*numero del progreso de la barra*/
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.important-info-p1 .item:nth-child(2) .progress{
+    background: #d6d3d1;
+}
+
+.important-info-p1 .item:nth-child(2) .progress .bar{
+    width: 0%;
+}
+
+.important-info-p1 .item:nth-child(2) .progress::before{
+    content: "0%";
+}
+
+
+.important-info-p1 .item:nth-child(3) .progress{
+    background: #94a3b8;
+}
+
+.important-info-p1 .item:nth-child(3) .progress .bar{
+    width: 0%;
+}
+
+.important-info-p1 .item:nth-child(3) .progress::before{
+    content: "0%";
+}
+
+  /**/
   
   .visitas-diarias {
       width: 30%;
@@ -187,6 +308,16 @@
       align-content: flex-start;
       flex-direction: row;
   
+  }
+
+  .visitas-diarias p {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .visitas-diarias-middle p {
+    font-size: 12px;
+    font-weight: 500;
   }
   
   .visitas-diarias-middle {
@@ -228,8 +359,12 @@
       background-color: #0e2a47;
       display: grid;
      place-content: center;
-     color: var(--bg-clr);
+     color: #f1f1f1;
      transition: all 0.3s ease;
+  }
+
+  .visitas-diarias-logo-content ion-icon{
+    font-size: 20px;
   }
   
   .important-info-p2 {
@@ -278,6 +413,8 @@
       width: 35%;
       height: 90%;
       background-color: var(--container-clr);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
       border-radius: 20px;
       padding: 10px;
       display: flex;
@@ -347,9 +484,10 @@
       display: flex;
       align-items: center;
       padding: 2%;
-      border: 1px solid #ddd;
+      border: 2px solid #ddd;
       border-radius: 10px;
-      background-color: #f9f9f9;
+      background-color: var(--person-bg-clr);
+      transition: all 0.3s ease;
       width: auto;
       height: 65px;
       overflow: hidden;
@@ -374,20 +512,22 @@
   .info h3 {
       margin: 0;
       font-size: 18px;
-      color: #333;
+      color: var(--persona-txt-clr);
   }
   
   .info p {
       margin: 0;
       margin-left:10px;
       font-size: 14px;
-      color: #666;
+      color: var(--persona-txt-clr);
   }
   
   .historias {
       width: 25%;
       height: 90%;
       background-color: var(--container-clr);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 20px;
       padding: 10px;
   }
@@ -396,7 +536,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
   }
   
   .historias .header a{
@@ -414,6 +554,8 @@
       width: 25%;
       height: 90%;
       background-color: var(--container-clr);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 20px;
       padding: 10px;
   }
@@ -479,8 +621,11 @@
       align-items: center;
       justify-content: space-between;
       background: #eff6ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 10px;
       border-radius: 10px;
+      height: 60px;
+      width: 100%;
   }
   
   .calendario .events .item > i{
