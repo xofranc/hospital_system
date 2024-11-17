@@ -50,13 +50,13 @@ new Chart(ctx2, {
     data: {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
         datasets: [{
-            label: 'Medical GPA',
+            label: 'Asistencia',
             data: [6, 10, 8, 14, 6, 7, 4],
             borderColor: '#0891b2',
             tension: 0.4
         },
         {
-            label: 'Aver GPA',
+            label: 'Media',
             data: [8, 6, 7, 6, 11, 8, 10],
             borderColor: '#ca8a04',
             tension: 0.4
