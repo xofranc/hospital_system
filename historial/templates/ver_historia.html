@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Historia Clínica</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Historia Clínica de {{ historia_clinica.paciente.nombre }}</h1>
+
+        <div class="historia-details">
+            <p><strong>Doctor:</strong> {{ historia_clinica.doctor.nombre }}</p>
+            <p><strong>Fecha:</strong> {{ historia_clinica.fecha }}</p>
+            <p><strong>Diagnóstico:</strong> {{ historia_clinica.diagnostico }}</p>
+            <p><strong>Tratamiento:</strong> {{ historia_clinica.tratamiento }}</p>
+            <p><strong>Comentarios:</strong> {{ historia_clinica.comentarios }}</p>
+        </div>
+
+        <div class="actions">
+            <a href="{% url 'historial:nueva_historia' %}" class="btn">Registrar Nueva Historia</a>
+            <a href="{% url 'historial:editar_historia_clinica' historia_clinica.id %}" class="btn">Editar Historia</a>
+        </div>
+
+        <div class="back">
+            <a href="{% url 'home' %}">Volver al inicio</a>
+        </div>
+    </div>
+</body>
+</html>
