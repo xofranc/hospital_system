@@ -4,7 +4,6 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 
 
-
 class UserManager(BaseUserManager):
     """
     Manager for the user model, provides methods to create user and superuser
@@ -46,7 +45,7 @@ class UserManager(BaseUserManager):
     def pacientes(self,base_data, role_data):
         base_data.setdefault("is_staff", False)
         base_data.setdefault("is_superuser", False)
-        base_data.setdefault("is_active", False)
+        base_data.setdefault("is_active", True)
         return self._create_user(
             related_model_name='pacientes',
             role_data=role_data,

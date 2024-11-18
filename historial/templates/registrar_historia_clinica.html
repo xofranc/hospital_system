@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Historia Clínica</title>
+</head>
+<body>
+    <h2>Registrar Historia Clínica</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Historia Clínica</button>
+    </form>
+</body>
+</html>
