@@ -115,6 +115,12 @@ body.dark-mode {
     background-color: transparent;
   }
 
+  .input_container li {
+    width: 90%;
+    height: auto;
+    font-family: "Inter", sans-serif;
+  }
+
   .icon {
     color: #8B8E98;
     width: 20px;

@@ -17,9 +17,9 @@
   <body>
     <div class="wrapper">
       <nav>
-        <a href="index.html">QR Code</a>
-        <div class="active" id="generator">Generator</div>
-        <div id="scanner">Scanner</div>
+        <a href="index.html">Codigo QR</a>
+        <div class="active" id="generator">Generador</div>
+        <div id="scanner">Escaner</div>
       </nav>
 
       <div class="container active" id="generator-container">
@@ -28,7 +28,7 @@
             <div class="text">
               <label for="text">
                 <i class="fa-solid fa-keyboard"></i>
-                enter your Text or URL
+                Ingrese su texto o url
               </label>
               <input
                 type="text"
@@ -43,7 +43,7 @@
               </label>
               <div class="colors-wrapper">
                 <div class="foreground">
-                  <span class="heading">foreground</span>
+                  <span class="heading">Primer plano</span>
                   <div class="custom-picker">
                     <span></span>
                     <input type="text" disabled value="#5a4ca1" />
@@ -56,7 +56,7 @@
                   </div>
                 </div>
                 <div class="background">
-                  <span class="heading">background</span>
+                  <span class="heading">Fondo</span>
                   <div class="custom-picker">
                     <span></span>
                     <input type="text" disabled value="#ffffff" />
@@ -69,7 +69,7 @@
                   </div>
                 </div>
                 <div class="corner">
-                  <span class="heading">corner</span>
+                  <span class="heading">Esquina</span>
                   <div class="custom-picker">
                     <span></span>
                     <input type="text" disabled value="#000000" />
@@ -90,42 +90,42 @@
               </label>
               <div class="types-wrapper">
                 <div class="dots">
-                  <span class="heading">dots</span>
+                  <span class="heading">Puntos</span>
                   <div class="custom-dropdown">
-                    <span class="selected" id="dots-style">square</span>
+                    <span class="selected" id="dots-style">Cuadrado</span>
                     <i class="fa-solid fa-chevron-down"></i>
                     <div class="options">
-                      <span class="option">dots</span>
-                      <span class="option active">square</span>
-                      <span class="option">rounded</span>
-                      <span class="option">extra-rounded</span>
-                      <span class="option">classy</span>
-                      <span class="option">classy-rounded</span>
+                      <span class="option">Puntos</span>
+                      <span class="option active">Cuadrado</span>
+                      <span class="option">Redondeados</span>
+                      <span class="option">Extra-redondeado</span>
+                      <span class="option">Elegante</span>
+                      <span class="option">Elegante-redondeado</span>
                     </div>
                   </div>
                 </div>
                 <div class="corner-squares">
-                  <span class="heading">corners squares</span>
+                  <span class="heading">Esquinas cuadradas</span>
                   <div class="custom-dropdown">
                     <span class="selected" id="corner-squares-style"
-                      >square</span
+                      >Cuadrado</span
                     >
                     <i class="fa-solid fa-chevron-down"></i>
                     <div class="options">
-                      <span class="option">dots</span>
-                      <span class="option active">square</span>
-                      <span class="option">extra-rounded</span>
+                      <span class="option">Puntos</span>
+                      <span class="option active">Cuadrado</span>
+                      <span class="option">Extra-redondeado</span>
                     </div>
                   </div>
                 </div>
                 <div class="corner-dots">
-                  <span class="heading">corners dots</span>
+                  <span class="heading">Puntos de esquinas</span>
                   <div class="custom-dropdown">
-                    <span class="selected" id="corner-dots-style">square</span>
+                    <span class="selected" id="corner-dots-style">Cuadrado</span>
                     <i class="fa-solid fa-chevron-down"></i>
                     <div class="options">
-                      <span class="option">dots</span>
-                      <span class="option active">square</span>
+                      <span class="option">Puntos</span>
+                      <span class="option active">Cuadrado</span>
                     </div>
                   </div>
                 </div>
@@ -174,7 +174,7 @@
                 size
               </label>
               <div class="custom-slider">
-                <p class="left-text">low</p>
+                <p class="left-text">Bajo</p>
                 <div class="slider">
                   <span>500 x 500</span>
                   <input
@@ -185,18 +185,18 @@
                     id="size"
                   />
                 </div>
-                <p class="right-text">high</p>
+                <p class="right-text">Alto</p>
               </div>
             </div>
           </form>
         </div>
         <div class="right">
-          <button class="generate-btn">generate qr code</button>
+          <button class="generate-btn">Generar codigo QR</button>
           <div class="qr-code">
             <div class="qr-code-img"></div>
           </div>
           <div class="download">
-            <p>download in</p>
+            <p>Descargar en</p>
             <div class="download-btns">
               <button class="download-btn" id="download-png">
                 <i class="fa-solid fa-download"></i>
@@ -219,8 +219,8 @@
           <p class="heading">QR Code</p>
           <label for="file" class="dropzone">
             <div class="content show">
-              <span class="text">Drag QR Code here or</span>
-              <button class="btn">browse</button>
+              <span class="text">Arrastre el codigo QR o</span>
+              <button class="btn">Navegar</button>
               <input type="file" id="file" hidden />
             </div>
             <img id="preview" />
@@ -229,16 +229,16 @@
         <i class="fa-solid fa-arrow-right-arrow-left"></i>
         <div class="right">
           <div class="result">
-            <p class="heading">Result</p>
+            <p class="heading">Resultado</p>
             <textarea id="result" disabled></textarea>
             <div class="btns" id="result-btns">
               <button class="btn" id="copy">
                 <i class="fa-solid fa-copy"></i>
-                copy
+                Copear
               </button>
               <button class="btn" id="open">
                 <i class="fa-solid fa-external-link"></i>
-                open
+                Abrir
               </button>
             </div>
           </div>
