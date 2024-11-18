@@ -1,411 +1,251 @@
+
+
+{% extends "pacientesidebar.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/pacientedashboard.css' %}">
+
+<div class="dashboard">
+    <section class="nav-dashboard-doctor">
+
+        <div class="logo-dashboard">
+            <img src="{% static 'img/SGIH.svg' %}" alt="">
+        </div>
+
+        <div class="user-info-nav">
+
+            <div class="search">
+                <a href="#">
+                    <ion-icon name="search-outline"></ion-icon>
+                </a>
+            </div>
+            <div class="notifications">
+                <a href="#">
+                    <ion-icon name="notifications-outline"></ion-i>
+                </a>
+            </div>
+
+            <div class="user">
+                <div class="name-patient-user">
+                    <p class="name-doctor">Camilo P.</p>
+                    <p >Paciente</p>
+                </div>
+                <div class="img-user">
+                    <img src="{% static 'img/unknown-user.jpg' %}" alt="">
+                </div>
+                <div class="arrow">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="dashboard-content">
+        <div class="important-info">
+            <div class="important-info-p1">
+                <!-- tres divs iguales, cambiar mas adelante -->
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Buenos Dias!</h5>
+                            <p>- Camilo P</p>
+                            <p>- Usuario recurrente</p>
+                        </div>
+                        <ion-icon name="aperture-outline"></ion-icon>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Medicamentos</h5>
+                            <p>- Asignados</p>
+                            <p>- Consultar Medicamentos</p>
+                        </div>
+                        <ion-icon name="briefcase-outline"></ion-icon>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Informacion Medica</h5>
+                            <p>- Cuotas</p>
+                            <p>- Formas de pago</p>
+                        </div>
+                        <ion-icon name="earth-outline"></ion-icon>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <!-- tres divs iguales, cambiar mas adelante -->
+            </div>
+            <div class="important-info-p2">
+                <div class="actividad-semanal-title">
+                    <h4>Actividad Semanal</h4>
+                </div>
+                <div class="actividad-semanal">
+                    <div class="item">
+                        <canvas class="activity-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="pacientes">
+                <div class="header-pacientes">
+
+                    <div class="header">
+                        <h4>Progreso Medico</h4>
+                        <div class="tabs">
+                            <a href="#" class="active">1Y</a>
+                            <a href="#">6M</a>
+                            <a href="#">3M</a>
+                        </div>
+                    </div>
+      
+                </div>
+                <div class="pacientes-content">      
+            
+                <div class="details">
+                    <div class="item">
+                        <h2>3.45</h2>
+                        <p>Asistencia</p>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="item">
+                        <h2>4.78</h2>
+                        <p>Media de Asistencia</p>
+                    </div>
+                </div>
     
-    <!-- Vincula el CSS de Swiper -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="{% static 'css/sliderswiper.css' %}">
+                <canvas class="prog-chart"></canvas>
 
-    <link rel="stylesheet" href= "{% static "css/styles.css" %}">
-    <link rel="stylesheet" href="{% static 'css/styles_login.css' %}">
-    <link rel="stylesheet" href="{% static 'css/doctor_login.css' %}">
-    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+                </div>
+            </div>
+            <div class="historias">
+                <div class="header">
+                    <h4>Recomendaciones</h4>
+                    <a href="#"># Mas</a>
+                </div>
+                <div class="historias-content">
 
-    <link rel="stylesheet" href="{% static 'css/pacientedashboard.css' %}">
+                  <div class="imagen-recomendaciones">
+                    <img src="{% static 'img/podcast2.1.jpg' %}">
+                  </div>
 
-    <link rel="icon" type="image/x-icon" href="{% static 'img/SGIH.svg' %}">
+            <div class="audio">
+                <i class='bx bx-podcast'></i>
+                <a href="#">Cuidado de la salud en casa</a>
+            </div>
+            <p>Aprende a mantenerte sano y limpio</p>
+            <div class="listen">
+                <div class="author">
+                    <img src="{% static 'img/profile.png' %}">
+                    <div>
+                        <a href="#">Alex</a>
+                        <p>Medico Especialista</p>
+                    </div>
+                </div>
+                <button>Escucha<i class='bx bx-right-arrow-alt'></i></button>
+            </div>
 
-    <title>{% block title %}Paciente - Hospital System{% endblock %}</title>
- </head>
- <body>
-  <!-- contenedor principal -->
-  <div class="page">
-    <!-- barra lateral -->
-  <div class="navcontainer">
-    <!-- seccion de cabecera de slidebar con logo -->
-    <div class="logo">
-      <a href="{% url 'home' %}" class="link"> 
+                </div>
+            </div>
+            <div class="calendario">
 
-        <svg id="logo-35" width="50" height="39" viewBox="0 0 50 39" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z" class="ccompli1" fill="#007AFF"></path> <path d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z" class="ccustom" fill="#312ECB"></path> </svg>
-   
-      </a>
-    </div>
-
-    <!-- navegacion principal -->
-<div class="nav">
-    <!-- primer menu de navegacion -->
-  <div class="menu">
-    <p class="title">Usuario</p>
-    <ul>
-    <li class="link-items">
-      <li class="link-item active">
-        <a href="{% url 'home' %}" class="link">
-          <ion-icon name="home-outline"></ion-icon>
-          <span style="--i: 1">Home</span>
-        </a>
-      </li>
-      <li class="link-item">
-        <a href="{% url 'paciente_login' %}" class="link">   
-          <ion-icon name="person-outline"></ion-icon>
-          <span style="--i: 2">Login</span>
-        </a>
-      </li>
-      <li class="link-item">
-        <a href="{% url 'paciente_register' %}" class="link">   
-          <ion-icon name="person-outline"></ion-icon>
-          <span style="--i: 2">Register</span>
-        </a>
-      </li>
-
-      </li>
-    </ul>
-    </div>
-
-      <!-- segundo menu : Admon -->
-       <div class="menu">
-        <p class="title">Doctor</p>
-        <ul>
-          <li class="link-item">
-            <a href="{% url 'doctor_login'%}" class="link">
-              <ion-icon name="people-outline"></ion-icon>
-              <span style="--i: 2">Login</span>
-            </a>
-          </li>
-
-{% comment %}  
-
-      <li class="link-item">
-
-        <a href="#" class="link">
-          <ion-icon name="documents-outline"></ion-icon>
-          <span style="--i: 7">Recetas</span>
-          <i class="arrow ph-bold ph-caret-down"></i>
-        </a>
-        <!-- submenu de doctor -->
-        <ul class="sub-menu">
-          <li><a href="#"><span class="text">Crear</span></a></li>
-          <li><a href="#"><span class="text">Listar</span></a></li>
-          <li><a href="#"><span class="text">Descargar</span></a></li>
-        </ul>
-      </li>
-
-{% endcomment %}
-
-      </ul>
-    </div>
-
-
-
-  <!-- tercer menu : Config -->
-  <div class="menu">
-    <p class="title">Config</p>
-    <ul>
-      <li class="link-item dark-mode">
-        <a href="#" class="link">
-          <ion-icon name="moon-outline"></ion-icon>
-          <span style="--i: 8">dark mode</span>
-        </a>
-      </li>
-      <li class="link-item">
-        <a href="#" class="link">
-          <img src="{% static 'img/unknown-user.jpg' %}" alt="" />
-          <span style="--i: 9">
-            <h4>ComingSoon</h4>
-            <p>© SGIH</p>
-          </span>
-        </a>
-      </li>
-    </ul>
-    </div>
-
-    {% comment %} cierra div nav {% endcomment %}
-  </div>
-
-  {% comment %} cierra div navcontainer {% endcomment %}
+                <div class="header">
+                    <h4>Calendario</h4>
+                    <a href="#">Noviembre <i class='bx bx-chevron-down'></i></a>
+                </div>
+    
+                <div class="dates">
+                    <div class="item">
+                        <h5>Mo</h5>
+                        <a href="#">11</a>
+                    </div>
+                    <div class="item">
+                        <h5>Tu</h5>
+                        <a href="#">12</a>
+                    </div>
+                    <div class="item active">
+                        <h5>We</h5>
+                        <a href="#">13</a>
+                    </div>
+                    <div class="item">
+                        <h5>Th</h5>
+                        <a href="#">14</a>
+                    </div>
+                    <div class="item">
+                        <h5>Fr</h5>
+                        <a href="#">15</a>
+                    </div>
+                    <div class="item">
+                        <h5>Sa</h5>
+                        <a href="#">16</a>
+                    </div>
+                    <div class="item">
+                        <h5>Su</h5>
+                        <a href="#">17</a>
+                    </div>
+                </div>
+    
+                <div class="events">
+                    <div class="item">
+                        <div>
+                            <i class='bx bx-time'></i>
+                            <div class="event-info">
+                                <a href="#">Medico General</a>
+                                <p>10:00-11:30</p>
+                            </div>
+                        </div>
+                        <i class='bx bx-dots-horizontal-rounded'></i>
+                    </div>
+                    <div class="item">
+                        <div>
+                            <i class='bx bx-time'></i>
+                            <div class="event-info">
+                                <a href="#">Radiografia</a>
+                                <p>13:30-15:00</p>
+                            </div>
+                        </div>
+                        <i class='bx bx-dots-horizontal-rounded'></i>
+                    </div>
+                    <div class="item">
+                        <div>
+                            <i class='bx bx-time'></i>
+                            <div class="event-info">
+                                <a href="#">Laboratorio Medico</a>
+                                <p>11:30-13:00</p>
+                            </div>
+                        </div>
+                        <i class='bx bx-dots-horizontal-rounded'></i>
+                    </div>
+                    
+                </div>
+    
+            </div>
+        </div>
+    </section>        
 </div>
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script  type ="module"  src ="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"> </script> 
+<script  nomodule  src ="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"> </script>
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-<script src="{% static 'js/scripts.js' %}"></script>
-
-  <!-- Vincula el JavaScript de Swiper -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="{% static 'js/swiper.js' %}"></script>
-
-        <div class="main-content">
-            
-          <div class="dashboard">
-            <div class="pacientes">
-                <div class="pacientes-content">
-                    <div class="Pacientes-P1">
-                        <div class="up">
-                            <p class="title">Buenos Dias!</p>
-                            <p class="N">Te preocupas tu, nos preocupamos nosotros. Tu salud es importante!</p>
-                        </div>
-
-                        <div class="down">
-                            <div class="descargar-historia">                                
-                                <a href="#" class="historia-btn">
-                                  <ion-icon name="cloud-download-outline"></ion-icon>
-                                  <span>Descargar PDF</span>
-                                </a>
-                            </div>
-                              
-                            <div class="doc-asig">
-                                
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="Pacientes-P2">
-                      <img src="{% static 'img/pacientedashboard.png' %}" alt="">
-                    </div>
-                </div>
-            </div>
-        
-        <div class="calendario">
-            <div class="calendar">
-                <h4>Disponibilidad Citas</h4>
-                <p>Noviembre 2024</p>
-                <div class="weekdays">
-                    <div>Lun</div>
-                    <div>Mar</div>
-                    <div>Mié</div>
-                    <div>Jue</div>
-                    <div>Vie</div>
-                    <div>Sáb</div>
-                    <div>Dom</div>
-                </div>
-                <div class="days">
-                    <!-- Espacios vacíos para alinear el primer día de noviembre -->
-                    <div class="empty"></div>
-                    <div class="empty"></div>
-                    <div class="empty"></div>
-                    <div class="empty"></div>
-                    <div class="day">1<span class="dotGreen"></span></div>
-                    <div class="day">2<span class="dotGreen"></span></div>
-                    <div class="day">3<span class="dotGreen"></span></div>
-                    <div class="day">4<span class="dotGreen"></span></div>
-                    <div class="day">5<span class="dotGreen"></span></div>
-                    <div class="day">6<span class="dotRed"></span></div>
-                    <div class="day">7<span class="dotGreen"></span></div>
-                    <div class="day">8<span class="dotGreen"></span></div>
-                    <div class="day">9<span class="dotGreen"></span></div>
-                    <div class="day">10<span class="dotGreen"></span></div>
-                    <div class="day">11<span class="dotGreen"></span></div>
-                    <div class="day">12<span class="dotGreen"></span></div>
-                    <div class="day">13<span class="dotGreen"></span></div>
-                    <div class="day">14<span class="dotGreen"></span></div>
-                    <div class="day">15<span class="dotRed"></span></div>
-                    <div class="day">16<span class="dotGreen"></span></div>
-                    <div class="day">17<span class="dotGreen"></span></div>
-                    <div class="day">18<span class="dotGreen"></span></div>
-                    <div class="day">19<span class="dotGreen"></span></div>
-                    <div class="day">20<span class="dotGreen"></span></div>
-                    <div class="day">21<span class="dotGreen"></span></div>
-                    <div class="day">22<span class="dotGreen"></span></div>
-                    <div class="day">23<span class="dotGreen"></span></div>
-                    <div class="day">24<span class="dotGreen"></span></div>
-                    <div class="day">25<span class="dotGreen"></span></div>
-                    <div class="day">26<span class="dotGreen"></span></div>
-                    <div class="day">27<span class="dotGreen"></span></div>
-                    <div class="day">28<span class="dotGreen"></span></div>
-                    <div class="day">29<span class="dotGreen"></span></div>
-                    <div class="day">30<span class="dotGreen"></span></div>
-                </div>
-                    <div class="upcoming">
-                        <h4>Citas Proximas</h4>
-                        <a href="">Ver más</a>
-                    </div>
-                    <div class="upcoming-content">
-
-                        <div class="upcoming-1">
-                            <div class="upcoming-img">
-                                <img src="{% static 'img/upcoming-img.jpg' %}" alt="">
-                            </div>
-                            <div class="upcoming-text">
-                                <h4>Medico General</h4>
-                                <p>10/11 | Luis Alexander B. | 04:00 PM</p>
-                            </div>
-                        </div>
-                        <div class="upcoming-2">
-                            <div class="upcoming-img">
-                                <img src="{% static 'img/upcoming-img.jpg' %}" alt="">
-                            </div>
-                            <div class="upcoming-text">
-                                <h4>Oftalmologia</h4>
-                                <p>15/11 | Luis Alexander B. | 06:00 PM</p>
-                            </div>
-                        </div>
-                        <div class="upcoming-3">
-                            <div class="upcoming-img">
-                                <img src="{% static 'img/upcoming-img.jpg' %}" alt="">
-                            </div>
-                            <div class="upcoming-text">
-                                <h4>RX</h4>
-                                <p>16/11 | Luis Alexander B. | 06:00 AM</p>
-                            </div>
-                        </div>
-                        <div class="upcoming-4">
-                            <div class="upcoming-img">
-                                <img src="{% static 'img/upcoming-img.jpg' %}" alt="">
-                            </div>
-                            <div class="upcoming-text">
-                                <h4>Laboratorio</h4>
-                                <p>28/11 | Luis Alexander B. | 02:00 PM</p>
-                            </div>
-                        </div>
-                        
-
-                        <!-- PARA PACIENTE DASHBOARD
-                        
-                        <div class="todo">
-					<div class="head">
-						<h3>Citas Medicas</h3>
-						<i class='bx bx-plus' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<ul class="todo-list">
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-					</ul>
-				</div>
-                        
-                        -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- graficos -->
+<script src="{% static 'js/script.js' %}"></script>
 
 
-
-                    </div>
-            </div>
-        </div>
-        
-        <div class="Npacientes">
-            <div class="npacientes-content">
-                <div class="infopacientes">
-                <div class="info-paciente-titulo">
-                    <h4>Datos Personales</h4>
-                    
-                </div>
-                    <div class="infopacientes-content">
-
-                                <div class="parent-data-user">
-                                    <div class="div-imagen">
-                                        <img src="{% static 'img/persona.jpg' %}" alt="">
-                                    </div>
-                                    <div class="div-altura"><strong>Altura:</strong> 1.75 m</div>
-                                    <div class="div-sangre"><strong>Tipo de sangre:</strong> O+</div>
-                                    <div class="div-edad"><strong>Edad:</strong> 30 Años</div>
-                                    <div class="div-genero"><strong>Género:</strong> Masculino</div>
-                                    <div class="div-nombre"><strong>Nombre:</strong> Juan Perez</div>
-                                    <div class="div-cedula"><strong>Cédula:</strong> 1234567890</div>
-                                    <div class="div-telefono"><strong>Teléfono:</strong> +1 (555) 123-4567</div>
-                                </div>
-
-                    </div>
-                    
-                </div>
-                <div class="historias">
-                    <div class="historias-titulo">
-                        <h4>Citas</h4>
-                        <a href="">Ver Todas</a>
-                    </div>
-                    <div class="historias-content">
-                        <div class="historia-1">
-                            
-                                <div class="info-historia">
-                                    <img src="{% static 'img/cita1.jpg' %}" alt=""/>
-                                    <span>
-                                    <h4>Medico General</h4>
-                                    <p>Alex Mahrez B.</p>
-                                    </span>
-                                </div>
-                                <div class="more-historia">
-                                    
-                                </div>
-                            
-                        </div>
-                        <div class="historia-2">
-                            
-
-                                <div class="info-historia">
-                                    <img src="{% static 'img/cita2.jpg' %}" alt=""/>
-                                    <span>
-                                    <h4>Dermatologia</h4>
-                                    <p>Laura Bautista M.</p>
-                                    </span>
-                                </div>
-                                <div class="more-historia">
-                                    
-                                </div>
-
-                            
-                        </div>
-                        <div class="historia-3">
-                            
-                                <div class="info-historia">
-                                    <img src="{% static 'img/cita3.jpg' %}" alt=""/>
-                                    <span>
-                                    <h4>Cardiologia</h4>
-                                    <p>Jorje Vuena V.</p>
-                                    </span>
-                                </div>
-                                <div class="more-historia">
-                                    
-                                </div>
-                            
-                        </div>
-                        <div class="historia-4">
-                            
-                                <div class="info-historia">
-                                    <img src="{% static 'img/cita4.jpg' %}" alt=""/>
-                                    <span>
-                                    <h4>Pediatria</h4>
-                                    <p>Vanesa Boca N.</p>
-                                    </span>
-                                </div>
-                                <div class="more-historia">
-                                    
-                                </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-        </div>
-
-        {% comment %} cierra div page {% endcomment %}
-    </div>
-
-
-</body>
-</html>
+{% endblock %}

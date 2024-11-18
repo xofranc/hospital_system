@@ -23,7 +23,10 @@
 
         {% csrf_token %}
 
-        {{ form_doctor }}
+        <div class="input_container">
+            <ion-icon name="keypad-outline" class="icon"></ion-icon>
+            {{ form_doctor }}
+        </div>
         
         {% comment %} <div class="input_container">
             <label class="input_label" for="username">Usuario</label>

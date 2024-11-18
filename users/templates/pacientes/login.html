@@ -3,7 +3,7 @@
 {% extends 'sidebar.html' %}
 
 {% block title %}
-    Login
+    Login - Paciente
 {% endblock %}
 
 {% block content %}
@@ -16,7 +16,7 @@
 
         <div class="title_container">
             <p class="title">Inicio Sesion Pacientes</p>
-            <span class="subtitle">Inicia sesion para poder disfrutar de todas las funcionalidades de este sistema.</span>
+            <span class="subtitle">Inicia sesion para poder disfrutar de todas las funcionalidades de este sistema</span>
         </div>
         <br>
 
@@ -33,7 +33,16 @@
             <ion-icon name="keypad-outline" class="icon"></ion-icon>
             <input type="password" name="password" class="input_field" id="password" placeholder="Contraseña" required> 
         </div>  {% endcomment %}
+<<<<<<< HEAD
         {{form_paciente.as_p}}
+=======
+        <div class="input_container">
+            
+            
+            <ion-icon name="keypad-outline" class="icon"></ion-icon>
+            {{ form_paciente.as_p }}
+        </div>
+>>>>>>> updates-frontend
 
         
         
@@ -44,11 +53,11 @@
 
         <div class="separator">
             <hr class="line">
-            <span>Otro</span>
+            <span>...</span>
             <hr class="line">
         </div>
 
-        <button type="submit" class="frg_pass_btn">
+        <button class="frg_pass_btn">
             <span>Olvido su Contraseña?</span>
         </button>
 
