@@ -15,7 +15,7 @@ def paciente_login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return render(request, 'paciente/dashboard.html',)
+            return redirect('dashboard')
             # return HttpResponse('Loggeado')
 
         else:
@@ -91,3 +91,7 @@ def doctor_register(request):
 
 def home(request):
     return render(request, 'home.html')
+
+
+def logout(request):
+    pass
