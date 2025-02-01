@@ -15,6 +15,7 @@ class UserManager(BaseUserManager):
         related_model_name = None,
         role_data  = None,
         base_data  = None,
+        user_type='paciente'
     ) -> "Usuarios":
         """
         This is a private method that handles the creation of a user instance.
@@ -34,6 +35,8 @@ class UserManager(BaseUserManager):
         password = base_data.pop("password")
         user: "Usuarios" = self.model(
             email=self.normalize_email(email),
+            user_type=user_type,  # Asignar el tipo de usuario
+
             content_object=related_instance,
             ** base_data,
         )
@@ -50,6 +53,7 @@ class UserManager(BaseUserManager):
             related_model_name='pacientes',
             role_data=role_data,
             base_data=base_data,
+            user_type='paciente'
         )
     
     def doctors(self, base_data, role_data):
@@ -60,6 +64,7 @@ class UserManager(BaseUserManager):
             related_model_name='doctors',
             role_data=role_data,
             base_data=base_data,
+            user_type='doctor'
         )
     
     def create_user(self, role_data,user_role, base_data):
@@ -94,7 +99,7 @@ class UserManager(BaseUserManager):
         base_data["email"] = email
         base_data["password"] = password
 
-        return self._create_user(base_data=base_data)
+        return self._create_user(base_data=base_data,user_type='superuser')
     
     
 # Create your models here.
@@ -106,9 +111,20 @@ class Usuarios(AbstractBaseUser, PermissionsMixin):
     lastName = models.CharField(max_length=100)
     is_active = models.BooleanField(default=False)
     is_staff = models.BooleanField(default= False)
-    date_joined = models.DateTimeField(auto_now_add=True)
-    
+    date_joined = models.DateTimeField(auto_now_add=True)    
     objects: UserManager = UserManager()
+    
+    
+    # Campo para identificar el tipo de usuario
+    USER_TYPE_CHOICES = (
+        ('paciente', 'Paciente'),
+        ('doctor', 'Doctor'),
+        ('superuser', 'Superusuario'),
+    )
+    user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES, default='paciente')
+
+    objects = UserManager()
+
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
