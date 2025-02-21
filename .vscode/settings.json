@@ -1,4 +1,6 @@
 {
   "djlint.showInstallError": false,
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "editor.fontFamily": "Jetbrains Mono",
+  "editor.fontLigatures": true
 }
