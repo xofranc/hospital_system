@@ -5,20 +5,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: test_db
-        ports:
-          - 3306:3306
-        options: >-
-          --health-cmd="mysqladmin ping --silent"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=3
-
     steps:
     - uses: actions/checkout@v2
 
@@ -31,11 +17,10 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install mysqlclient
 
     - name: Run tests
-      env:
-        DATABASE_URL: mysql://root:root@localhost:3306/test_db
       run: |
         python manage.py migrate
         python manage.py test
+      env:
+        GITHUB_ACTIONS: true

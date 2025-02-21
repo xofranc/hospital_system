@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -143,3 +145,23 @@ AUTHENTICATION_BACKENDS = [
     "users.backends.EmailPasswordBackend",
     "django.contrib.auth.backends.ModelBackend",
 ]
+
+if os.getenv('GITHUB_ACTIONS'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    # Configuración de la base de datos local
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'nombre_de_tu_bd',
+            'USER': 'tu_usuario',
+            'PASSWORD': 'tu_contraseña',
+            'HOST': 'localhost',
+            'PORT': '3306',
+        }
+    }
