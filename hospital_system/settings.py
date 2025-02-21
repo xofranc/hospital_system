@@ -158,9 +158,9 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'nombre_de_tu_bd',
-            'USER': 'tu_usuario',
-            'PASSWORD': 'tu_contraseña',
+            'NAME': 'hospital',
+            'USER': 'root',
+            'PASSWORD': '1003540355',
             'HOST': 'localhost',
             'PORT': '3306',
         }
